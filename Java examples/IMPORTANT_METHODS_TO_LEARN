@@ -1,0 +1,10 @@
+
+        *** How to make power of in Java ***
+
+int result = (int) Math.pow(2, 3); // result = 8
+
+        *** Repeat string ***
+
+String s = "M";
+String result = s.repeat(3);
+System.out.println(result); // MMM
