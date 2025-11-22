@@ -1,12 +1,13 @@
 
 **List all the possible questions for Java, Spring and SQL and Learn all of them**
 
-
 Bold, surrounded by ** ** - mean noted
+
+** - mean already noted
 
 1) What design patterns do you know ? (NOTE)
 2) What algorithms do you know ? (TO NOTE!)
-3) What are methods of Object class in Java ? (11 methods) (Explain each)
+3) **What are methods of Object class in Java ? (11 methods)**
 4) What is polimorphyzm (NOTE! Carefully it is not what I am think its)
 5) Stack vs Heap memory (Read note and compare to Chat gpt (Make more appropiate answer))
 6) How garbage collection works? 
@@ -29,8 +30,17 @@ Bold, surrounded by ** ** - mean noted
 23) What is the difference between a JAR and a WAR?
 24) Can you make different access modifiers for methods in child classes? 
 25) Can you change exception thrown by parent class in child class?
-26) Can class be static ?
+26) Can class be static ? If yes why do we need it? 
 27) What is deadlock? What is thread starvation?
 28) Have you migrated to latest java version ? What challenges you faced ?
 29) Difference between notify and notifyAll. (NOTE)
 30) How java manage memory? (Both stack and heap)
+31) 3 principles of OOP (4 th also mention
+32) How hash code related to equals?
+33) Can you manually trigger a garbage collector?
+34) Can interface be private, default or protected
+35) What is default access modifier, how it is different from protected
+36) Why do we need super Keyword and how can we use it? 
+37) Name 3 creational, 3 behevioural, 3 structural design patterns and explain each.
+38) Copy on write collections
+39) Name all Java collections (Document and understand all)

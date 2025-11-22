@@ -12,17 +12,43 @@
 9) 9 Design patterns (3 createonal, 3 structural, 3 behaviour)
 10) Custom functional interface pass to lambda
 11) Inner class, anonymous classes
-
-                            Spring
+12) All java streams :   
+    Filter even numbers — keep only numbers divisible by 2
+    Convert strings to uppercase — map each string to uppercase
+    Count strings starting with "A" — count items matching a prefix
+    Find first number > 10 — return the first number above a threshold
+    Distinct + sorted — remove duplicates and sort the result
+    ✅ Medium
+    Sum of squares — square each number and sum them
+    List → Map (name → length) — convert list of names into a map
+    Group words by length — group strings based on their size
+    Find longest string — find max-length element using streams
+    Join strings — join items into one string with a separator
+    People older than 18 — filter objects and return only their names
+    ✅ Advanced
+    Partition adults/kids — split list into two lists based on age
+    Find duplicates — return elements that appear more than once
+    Flatten nested lists — convert List<List<T>> to List<T>
+    Word frequency map — count how many times each word appears
+    Max salary per department — group employees and pick highest salary
+    Custom collector (reverse) — build a reversed string using Collector
+    Parallel sum — compute sum using parallel stream and discuss impact
+13) 
+                                    Spring
 
 1) Create a spring boot app which has APIs and can save data to H2 using spring data.
 2) Create service (Not just directly call repository from controller)
 3) Create Create,Update,List,FindBy,Delete apis
 4) Implement @Transactional annotation
 5) Secure api using spring security auth token
-6) Connect to H2 console and practice queries
-
-
+6) All tests, how to test Restcontroller, @Spy, how to test repository - how to test endpoint that I added ?
+7) Connect spring data to a table with composite key
+8) Type http://localhost:8080 myself
+9) Add : Authorization: Bearer <your_token_here>
+10) 
+11) 
+12) 
+13) 
                              SQL   
 
 1) Left join
