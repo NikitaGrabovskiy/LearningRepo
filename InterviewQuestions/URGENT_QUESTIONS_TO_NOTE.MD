@@ -1,78 +1,120 @@
 
-                            **Study these first - NOTE**
 
-*** Difference between Abstract class and Interface
+      ***Can you make different access modifiers for methods in child classes? ***
 
-*** Java 9, 14, 17, and 21 Features 
+Yes. When overriding a method in a child class, you can only make the access more open, never more restricted.
 
-✅ Java 9 – Key Features
+Allowed:
+private (can't override), default → protected → public (more open)
 
-Module System (JPMS) – Introduced modularity to Java and the JDK.
+Not allowed:
+You cannot go from public → protected/private or make visibility smaller.
 
-JShell (REPL) – Interactive shell for trying Java commands quickly.
+                   ***  What is the difference between Runnable and Callable? ***
 
-Improved Streams API – Added new methods to make streaming more powerful.
+✅ Runnable — Detailed Explanation
 
-Private Methods in Interfaces – Interfaces can contain private helper methods.
+Runnable represents a task that can run on a separate thread, but it does not produce any result.
 
-HTTP/2 Client (Incubator) – Modern, asynchronous HTTP client.
+What it actually does
 
-Multi-release JARs – Single JAR supporting multiple Java versions.
+Defines a unit of work that runs in the background.
 
-✅ Java 14 – Key Features
+You implement the run() method with the logic you want to execute.
 
-Switch Expressions – Switch becomes an expression with a more concise syntax.
+You pass a Runnable to a Thread or an ExecutorService.
 
-Records (Preview) – Lightweight, immutable data carriers.
+The thread executes the run() logic asynchronously.
 
-Pattern Matching for instanceof (Preview) – Cleaner type checks.
+Because run() returns void, the task cannot give you any output, only side effects (logging, updating DB, etc).
 
-Text Blocks – Multi-line string literals.
+Typical use cases
 
-Helpful NullPointerExceptions – JVM shows which variable caused the NPE.
+Fire-and-forget tasks
+(logging, email sending, cache cleanup)
 
-Improved Packaging Tool – Create native installers for applications.
+Repeated tasks in schedulers
 
-✅ Java 17 (LTS) – Key Features
+When you do NOT need a return value
 
-Sealed Classes – Restrict which classes can extend or implement a type.
+Key limitation
 
-Records (Final) – Records officially become a stable feature.
+No result and no checked exceptions → you can't know if it succeeded.
 
-Pattern Matching for Switch (Preview) – More powerful switch statements.
+✅ Callable — Detailed Explanation
 
-Enhanced Pseudo-Random Number Generators – New algorithms and interfaces.
+Callable<V> represents a task that runs in the background AND returns a result of type V.
 
-Foreign Function & Memory API (Incubator) – Safe, modern alternative to JNI.
+What it actually does
 
-Strong Encapsulation of JDK Internals – JDK internal APIs strongly restricted.
+It is similar to Runnable, but designed to produce a value.
 
-Removed Legacy Features – Removal of Applets and experimental JIT/AOT tools.
+You implement the call() method.
 
-✅ Java 21 (LTS) – Key Features
+You submit it to an ExecutorService.
 
-Virtual Threads (Project Loom) – Lightweight threads for massive concurrency.
+The executor returns a Future<V>, which represents the pending result.
 
-Pattern Matching for Switch (Final) – Fully standardized after previews.
+You can call future.get() to retrieve the result, waiting for completion.
 
-Record Patterns (Final) – Direct deconstruction of record components.
+Callable can:
 
-Sequenced Collections – Consistent first/last element operations across lists, sets, and maps.
+return data
 
-String Templates (Preview) – Safer, more powerful string interpolation.
+throw checked exceptions
 
-Unnamed Classes and Instance Main (Preview) – Simplifies starting small programs.
+be combined with Future/ExecutorService for asynchronous programming
 
-Foreign Function & Memory API (Final) – Full replacement for unsafe native access.
+Typical use cases
 
-Scoped Values (Incubator) – Safer alternative to thread-locals for sharing data.
+Tasks where the result matters:
+
+reading from DB
+
+calling APIs
+
+computing values
+
+parallel computation (divide-and-conquer)
+
+🚀 Runnable vs Callable — What they do (high-level)
+Runnable
+
+Runs in the background
+
+Performs actions
+
+Has no return value
+
+Cannot throw checked exceptions
+
+Task is “fire-and-forget”
+
+Callable
+
+Runs in the background
+
+Performs actions
+
+Returns data (via Future)
+
+Can throw exceptions
+
+Suitable for multi-threading where results are needed
+
+🎯 Interview-Perfect Explanation
+
+“Runnable represents a background task that executes some code but does not return a result and cannot throw checked exceptions. Callable is designed for tasks that must produce a value or throw exceptions; it works with ExecutorService to run asynchronously and retrieve the result using a Future. Use Runnable for fire-and-forget actions, and Callable when your background task must return data.”
+
+
 
 
 
 *** What is polimorphysm:
 
 Polymorphism means the ability of different objects to respond to the same operation (method call) in different ways.
-Polymorphism in OOP allows the same method call to behave differently depending on the actual object. It enables multiple classes to implement the same interface or inherit the same base class and provide their own version of a method.
+Polymorphism in OOP allows the same method call to behave differently depending on the actual object.
+It enables multiple classes to implement the same interface or inherit the same base class and provide their own version of a method.
 
 Two main types of polymorphism
 1. Compile-time Polymorphism (Static Polymorphism)
@@ -186,3 +228,280 @@ Binary Search
 Strassen’s Matrix Multiplication
 Closest Pair of Points
 
+
+                **** Difference between Constructor, field and setter dependency injection ****
+
+Types of Dependency Injection
+
+There are three main types of Dependency Injection:
+
+1. Constructor Injection (Most recommended)
+
+Dependencies are provided through the class constructor.
+
+Why use it:
+
+Makes dependencies explicit
+
+Allows immutability
+
+Easy to test
+
+No hidden magic
+
+2. Setter Injection (Method Injection)
+
+Dependencies are provided using setter methods.
+
+@Autowired
+public void setPaymentService(PaymentService ps) { ... }
+
+Spring (or even you manually) can call the setter method again, which means the injected dependency can be changed at runtime.
+
+Use when:
+
+Dependency is optional
+
+You want the ability to change the dependency at runtime
+
+For some configuration classes
+
+3. Field Injection
+
+Dependencies are injected directly into class fields, usually with @Autowired.
+
+@Autowired
+private PaymentService paymentService;
+
+
+Use when:
+
+Quick prototypes
+
+Legacy code
+
+Framework-managed classes (tests, config classes)
+
+Not recommended for production code.
+
+Summery
+
+In Spring, dependency injection can be done through constructor, setter, and field injection. Constructor injection is preferred because it clearly defines all required dependencies up front, allows the use of final fields, prevents nulls, and makes unit testing straightforward. Setter injection is useful when a dependency is optional, when you want to allow changing the dependency after object creation, or when working with configuration objects. Field injection, while simple, is discouraged in production code because it hides dependencies and complicates testing, but it can still be acceptable in legacy systems, quick prototypes, test classes, or Spring-managed classes like configuration files where constructors are not practical.”
+
+
+
+
+               *** What parameters of @Transactionals annotation do you know ? ***
+
+✅ Main Parameters of @Transactional
+1. propagation
+
+Defines how the transaction should behave when there is already an existing transaction.
+Examples:
+
+REQUIRED (default)
+
+REQUIRES_NEW
+
+MANDATORY
+
+SUPPORTS
+
+NOT_SUPPORTED
+
+NEVER
+
+NESTED
+
+2. isolation
+
+Controls how isolated this transaction is from others.
+Examples:
+
+READ_COMMITTED
+
+READ_UNCOMMITTED
+
+REPEATABLE_READ
+
+SERIALIZABLE
+
+3. rollbackFor
+
+Specifies exceptions that should trigger rollback.
+
+@Transactional(rollbackFor = Exception.class)
+
+4. noRollbackFor
+
+Specifies exceptions that should NOT trigger rollback.
+
+@Transactional(noRollbackFor = IllegalArgumentException.class)
+
+5. readOnly
+
+Marks a transaction as read-only to optimize performance (no writes allowed).
+
+@Transactional(readOnly = true)
+
+6. timeout
+
+Sets a timeout in seconds for the transaction.
+
+@Transactional(timeout = 5)
+
+7. value / transactionManager
+
+Specifies a specific transaction manager if multiple DBs or managers are present.
+
+@Transactional("primaryTxManager")
+
+
+                  *** What is a Future and how is it used? *** 
+
+✅ What is a Future and How Is It Used?
+What is a Future?
+
+A Future in Java represents the result of an asynchronous computation.
+It is a placeholder object returned immediately when you submit a task to an ExecutorService, while the task itself continues running in the background.
+
+Think of a Future as a promise that a result will be available later.
+
+✅ What Future Actually Does
+
+A Future lets you:
+
+1. Check if the task is done
+   future.isDone();
+
+2. Cancel the task
+   future.cancel(true);
+
+3. Get the result (waits if necessary)
+   Integer result = future.get();
+
+4. Get the result with timeout
+   Integer result = future.get(2, TimeUnit.SECONDS);
+
+5. Handle exceptions thrown inside the task
+
+If the task throws an exception, future.get() will wrap it in an ExecutionException.
+
+✅ How Future Is Used (Step-by-Step)
+1. Submit a Callable to ExecutorService
+   ExecutorService service = Executors.newFixedThreadPool(2);
+
+Future<Integer> future = service.submit(() -> {
+Thread.sleep(1000);
+return 42;
+});
+
+2. Do something else while task runs
+   System.out.println("Doing other work...");
+
+3. Retrieve the result
+   Integer value = future.get();  // blocks until ready
+   System.out.println("Result: " + value);
+
+4. Shutdown
+   service.shutdown();
+
+🧠 Why Future is Useful
+
+Allows asynchronous programming
+
+Avoids blocking on long tasks
+
+Lets you retrieve results later
+
+Prevents thread explosion by using thread pools
+
+Helps break a large task into parallel subtasks (divide-and-conquer)
+
+⭐ Perfect Interview Summary
+
+“A Future represents the result of an asynchronous computation. When you submit a Callable to an ExecutorService, it returns a Future that you can use to check if the task is done, cancel it, or retrieve the result with get(). It allows asynchronous programming by letting the main thread continue working while the background task completes.”
+
+            *** difference between Future and CompletableFuture ***
+
+✅ Future vs CompletableFuture (Interview-Ready Answer)
+1. Future — Basic asynchronous result
+
+Future is a simple placeholder for a result of an asynchronous task.
+
+Limitations of Future
+
+Cannot complete manually
+
+Cannot chain tasks
+
+Cannot combine multiple tasks
+
+No callback support
+
+get() blocks the calling thread
+
+Hard to handle dependent async operations
+
+Cannot run tasks asynchronously without an ExecutorService
+
+Future is basically “asynchronous but still blocking when you need the result.”
+
+2. CompletableFuture — Advanced, non-blocking async programming
+
+CompletableFuture is a powerful class introduced in Java 8 that lets you build non-blocking, composable, async pipelines.
+
+Capabilities of CompletableFuture
+
+Run tasks asynchronously without manually dealing with threads:
+
+CompletableFuture.supplyAsync(() -> compute());
+
+
+Chain tasks:
+
+future.thenApply(result -> process(result));
+
+
+Run callbacks when done (non-blocking):
+
+future.thenAccept(result -> System.out.println(result));
+
+
+Combine multiple futures:
+
+future1.thenCombine(future2, (a, b) -> a + b);
+
+
+Handle exceptions:
+
+future.exceptionally(e -> -1);
+
+
+Complete manually:
+
+future.complete(100);
+
+
+Supports async timeouts, allOf(), anyOf(), etc.
+
+⭐ Even Stronger 2–3 Sentence Version
+
+“Future is a simple handle to an asynchronous computation, but it is limited—you can’t chain tasks, attach callbacks, or avoid blocking when retrieving the result. CompletableFuture is a more advanced, flexible API for asynchronous and reactive programming; it supports non-blocking callbacks, task chaining, composition, exception handling, and manual completion. It’s the modern way to build async flows in Java.”
+
+
+      *** Have you migrated to latest java version ? What challenges you faced ? ***
+
+Yes, I’ve worked on Java version upgrades. The main challenges I faced were:
+
+Deprecated or removed APIs
+Some older libraries relied on APIs that were deprecated or removed in newer Java versions, especially when moving from Java 8 → 11 → 17.
+I had to update libraries or refactor the code.
+
+Third-party library incompatibility
+Not all dependencies support newer Java versions immediately.
+I needed to upgrade dependencies, replace outdated ones, or adjust code to match new versions.
+
+Build and CI/CD updates
+Maven and Gradle plugins sometimes required updates to support newer Java versions.
+Build pipelines also needed JDK changes.

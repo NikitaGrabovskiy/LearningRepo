@@ -33,8 +33,16 @@
     Max salary per department — group employees and pick highest salary
     Custom collector (reverse) — build a reversed string using Collector
     Parallel sum — compute sum using parallel stream and discuss impact
-13) 
-                                    Spring
+13) Callable and Runnable interfaces
+14) ExecutorService and thread pools
+15) Future
+16) Nested classes, static classes, anonimous classes, nested interface
+17) Notify and NotifyAll
+
+
+
+
+    Spring
 
 1) Create a spring boot app which has APIs and can save data to H2 using spring data.
 2) Create service (Not just directly call repository from controller)

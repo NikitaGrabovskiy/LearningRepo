@@ -1,0 +1,198 @@
+        ***
+Worker Node
+
+What Runs on a Worker Node:
+Pods
+Deployments, DaemonSets, StatefulSets — all land on worker nodes
+Node-level add-ons (like monitoring agents)
+
+        ***
+Master Node has control plain components :
+
+    1) Etcd
+
+    Etcd is a distributed, consistent key-value store used by Kubernetes as its primary database.
+    It stores all the cluster’s state and metadata—such as nodes, Pods, ConfigMaps, Secrets, networking configurations, and more.
+    Because etcd is highly available, fault-tolerant, and uses the Raft consensus algorithm,
+    Kubernetes can reliably coordinate the entire cluster even if some nodes fail.
+    In simple terms:
+    👉 If etcd is down, the Kubernetes API has no source of truth and the cluster cannot function properly.
+
+    2) Kube schedulers:
+        * Node controller
+        * Replication controller
+
+    3) Kube-apiserver
+
+    The kube-apiserver is the central entry point to the Kubernetes control plane.
+    It exposes the Kubernetes API and is responsible for receiving all requests—whether from kubectl,
+    controllers, schedulers, or other components—and validating and processing them.
+    It reads and writes cluster state to etcd, enforces authentication/authorization,
+    and acts as the communication hub for all control-plane components and worker nodes.
+
+    In simple terms:
+    👉 It is the “front door” of the Kubernetes cluster and the only component that talks directly to etcd.
+
+      ***
+
+ Docker or other container technology needs to be installed on all nodes, including Master Node
+
+      ***
+  Kubelet is an agent that runs on each node on a cluster (Like a capitan on a ship in the example)
+  It listens instractions from kube-apiserver and create or destroy pods on the node
+
+    ***
+Kube proxy also installed on each node. It allows communication between worker nodes
+
+    ***
+
+Container Runtime Interface (CRI) - allows Kubernates to use different containers (Not just docker)
+
+    ***
+
+You do not need to install docker. It is possible to run containers just with Container D
+
+    ***
+
+You can install etcd cluster, run put and get commands
+
+Only when the change (pods, deployments etc) updated in etcd - it is considered complete
+
+in the etcd.service you can find:
+    --advertise-client-urls http://${INTERNAL_IP}:2379         (it is the url that can be used to access the etcd)
+
+If you used kubeadm to install kubernates - it will install the etcd as a pod in kubeadm-system
+
+If you have several etcd-servers running for high availability - you need to add a -- config option to
+etcd.service with info of other servers so the servers would know about each other
+
+    ***
+
+    Kube-api server
+
+When you run kubectl command - kube-apiserver called
+
+If you run get pods command the kube-apiserver access etcd cluster to get the info and send it back to the user
+
+If you run create pod command - kube-apiserver will update etcd and return a success to user. After kube-scheduler will see that
+there is an unassigned pod and will create it in the node. The scheduler will call kube-apiserver again with request to schedule
+a pod of one of the nodes. The kube-apiservier will send a command to the node kubelet to schedule the pod. Once done
+the kubelet of the node will send a updated status to kube-apiserver and it will update the status in etcd.
+
+use kube-apiserver.service to add configuration parameters to kube-apiserver
+
+If you use kubeadm tool to install kubernates it will install it as a separate node:
+
+kube-apiserver-master
+
+
+                               *** Controller-Manager ***
+
+Controller is a process that continuously monitors the state of various components within the system and works torwards
+brinning system to the desired state.
+
+For example :
+    Node controller constantly monitoring states of all the nodes in the cluster and takes the necessary actions to keep
+    the applications running. It does that througth kube-apiserver.
+    It constantly gets status of the nodes. If if nodes stops to replying to the calls - contoroller marks it as unreachable.
+    It waits for 5 minutes to node get back to it's healthy state. If it not - it marks it as Note ready and assign it's
+    pods to another nodes
+
+
+    Next controller - Replication controller - makes sure the desired number of replicas created
+
+There is an option to select which controllers do you want to enable. But default they all be enabled.
+If any of your contontrollers do not work or exist - that is the first thing to check.
+
+
+                         *** Kube-scheduler ***
+
+Kube-scheduler responsible for desiding which pod goes to which node.
+Kubelet of the node itself - is actually create the pods
+
+                              *** Kubelet ***
+
+ It receives an instructions from kube-apiserver. When it asks available container runtime (Container D) to
+ pull the image and create pods
+
+    If you use Kubeadm tool to install cluster - it does not automatically install kubelet on the nodes !!!
+    That is an important difference from other components!!!
+    You must always manually install kubelet on your worker nodes !!!
+
+    1) Download installer
+    2) Install it
+    3) Run it as a service
+
+
+    *** Kube proxy ***
+It is a process that runs on each node on a kubernates cluster. It's job is to search for a new services,
+and every time a new service created, it creates a rules to forward traffic from nodes to the new services.
+
+Kubeadm tool deploys kube-proxy to each node of the cluster
+
+
+                     *** Yaml in Kubernates ***
+
+Defenition yaml files always contain the following 4 fields (Root level properties) :
+
+apiVersion:
+kind:
+metadata:
+
+
+spec:
+
+
+    Examples
+
+metadata:
+    name: myapp-pod
+    labels:
+        app: myapp
+        type: front-end
+
+
+                             *** Replica Set ***
+
+ReplicationController is a older object (Similar functionality to ReplicaSet)
+
+ReplicatSet has an extra spec - selector (Which ReplicationController does not have as required)
+
+Example:
+
+    selector:
+        matchLabels:
+            type: front-end
+
+ The selector allows to create pods using containers which are not part of template (where you specify containers inside
+ replica set definition file itself). Helpful if for example - there are some pods were created before
+ replica set
+
+The replica set will also manage the existed, already created pods with the same label.
+
+ReplicaSet can only use template section to create a new pods
+
+                            *** Deployments ***
+
+Rolling update is then you update pods to newer version one after another
+
+Deployments is higher in hierarchy that replica set. It allows to update underlieng instances  seamlessle using rolling updates,
+undo changes and pause and resume changes as required.
+
+Yaml for deployment looks like the replica set yaml but the kind is Deployment
+
+Deployment automatically creates a replica set so if you run a
+    kubectl get replicaset - you will see a new one created in the name of the deployment
+
+
+
+
+
+
+
+
+
+
+
+
+
