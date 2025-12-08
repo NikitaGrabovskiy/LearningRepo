@@ -1,4 +1,4 @@
-package JavaPractice.DesignPatterns.Behaviour.observer;
+package JavaPractice.TO_PRINT.DesignPatterns.designPatterns.Creational.Behaviour.observer;
 
 import java.util.ArrayList;
 import java.util.List;

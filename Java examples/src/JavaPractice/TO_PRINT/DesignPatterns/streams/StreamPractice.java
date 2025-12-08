@@ -1,12 +1,9 @@
-package JavaPractice.streams;
+package JavaPractice.TO_PRINT.DesignPatterns.streams;
 
-import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 public class StreamPractice {
 
@@ -102,16 +99,6 @@ public class StreamPractice {
         System.out.println(collect);
 
     }
-
-
-
-
-
-
-
-
-
-
 
 }
 

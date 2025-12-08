@@ -94,9 +94,20 @@ kubectl create deployment --image=nginx nginx
 
 kubectl create deployment --image=nginx nginx --dry-run=client -o yaml > nginx-deployment.yaml
 
+                                        ******
 
+--help
+to get help options (make sure it has 2 --)
 
+                                        ******
+                            Set default namespace
+kubectl config set-context --current --namespace=<namespace-name>
 
+                                        ******
+                    Option to see in all namespaces
+-A
+
+ --all-namespaces
 
 
 

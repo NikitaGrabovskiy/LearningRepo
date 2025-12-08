@@ -33,9 +33,9 @@
     Max salary per department — group employees and pick highest salary
     Custom collector (reverse) — build a reversed string using Collector
     Parallel sum — compute sum using parallel stream and discuss impact
-13) Callable and Runnable interfaces
-14) ExecutorService and thread pools
-15) Future
+13) 
+14) ExecutorService and thread pools,Callable and Runnable interfaces,Future
+15) 
 16) Nested classes, static classes, anonimous classes, nested interface
 17) Notify and NotifyAll
 
@@ -52,7 +52,7 @@
 6) All tests, how to test Restcontroller, @Spy, how to test repository - how to test endpoint that I added ?
 7) Connect spring data to a table with composite key
 8) Type http://localhost:8080 myself
-9) Add : Authorization: Bearer <your_token_here>
+9) 
 10) 
 11) 
 12) 

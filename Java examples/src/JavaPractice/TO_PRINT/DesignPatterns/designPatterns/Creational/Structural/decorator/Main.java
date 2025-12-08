@@ -1,4 +1,4 @@
-package JavaPractice.DesignPatterns.Structural.decorator;
+package JavaPractice.TO_PRINT.DesignPatterns.designPatterns.Creational.Structural.decorator;
 
 public class Main {
 

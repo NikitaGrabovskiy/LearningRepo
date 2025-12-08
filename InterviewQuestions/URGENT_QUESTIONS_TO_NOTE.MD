@@ -1,171 +1,6 @@
 
+*** How do you protect Endpoint using JWT token  ? (Practice in code) :
 
-      ***Can you make different access modifiers for methods in child classes? ***
-
-Yes. When overriding a method in a child class, you can only make the access more open, never more restricted.
-
-Allowed:
-private (can't override), default → protected → public (more open)
-
-Not allowed:
-You cannot go from public → protected/private or make visibility smaller.
-
-                   ***  What is the difference between Runnable and Callable? ***
-
-✅ Runnable — Detailed Explanation
-
-Runnable represents a task that can run on a separate thread, but it does not produce any result.
-
-What it actually does
-
-Defines a unit of work that runs in the background.
-
-You implement the run() method with the logic you want to execute.
-
-You pass a Runnable to a Thread or an ExecutorService.
-
-The thread executes the run() logic asynchronously.
-
-Because run() returns void, the task cannot give you any output, only side effects (logging, updating DB, etc).
-
-Typical use cases
-
-Fire-and-forget tasks
-(logging, email sending, cache cleanup)
-
-Repeated tasks in schedulers
-
-When you do NOT need a return value
-
-Key limitation
-
-No result and no checked exceptions → you can't know if it succeeded.
-
-✅ Callable — Detailed Explanation
-
-Callable<V> represents a task that runs in the background AND returns a result of type V.
-
-What it actually does
-
-It is similar to Runnable, but designed to produce a value.
-
-You implement the call() method.
-
-You submit it to an ExecutorService.
-
-The executor returns a Future<V>, which represents the pending result.
-
-You can call future.get() to retrieve the result, waiting for completion.
-
-Callable can:
-
-return data
-
-throw checked exceptions
-
-be combined with Future/ExecutorService for asynchronous programming
-
-Typical use cases
-
-Tasks where the result matters:
-
-reading from DB
-
-calling APIs
-
-computing values
-
-parallel computation (divide-and-conquer)
-
-🚀 Runnable vs Callable — What they do (high-level)
-Runnable
-
-Runs in the background
-
-Performs actions
-
-Has no return value
-
-Cannot throw checked exceptions
-
-Task is “fire-and-forget”
-
-Callable
-
-Runs in the background
-
-Performs actions
-
-Returns data (via Future)
-
-Can throw exceptions
-
-Suitable for multi-threading where results are needed
-
-🎯 Interview-Perfect Explanation
-
-“Runnable represents a background task that executes some code but does not return a result and cannot throw checked exceptions. Callable is designed for tasks that must produce a value or throw exceptions; it works with ExecutorService to run asynchronously and retrieve the result using a Future. Use Runnable for fire-and-forget actions, and Callable when your background task must return data.”
-
-
-
-
-
-*** What is polimorphysm:
-
-Polymorphism means the ability of different objects to respond to the same operation (method call) in different ways.
-Polymorphism in OOP allows the same method call to behave differently depending on the actual object.
-It enables multiple classes to implement the same interface or inherit the same base class and provide their own version of a method.
-
-Two main types of polymorphism
-1. Compile-time Polymorphism (Static Polymorphism)
-
-Achieved through method overloading.
-The method signature determines which method is called.
-
-Same method name, different parameters.
-
-void draw(Circle c)
-void draw(Square s)
-
-2. Runtime Polymorphism (Dynamic Polymorphism)
-
-Achieved through method overriding.
-The decision of which method to run happens at runtime based on the actual object.
-
-One interface, many behaviors.
-
-class Shape {
-void draw() {}
-}
-
-class Circle extends Shape {
-void draw() { System.out.println("Drawing circle"); }
-}
-
-class Square extends Shape {
-void draw() { System.out.println("Drawing square"); }
-}
-
-Shape s = new Circle();
-s.draw();  // → "Drawing circle"
-
-✅ Short Interview-Ready Definition
-
-Polymorphism in OOP allows the same method call to behave differently depending on the actual object. It enables multiple classes to implement the same interface or inherit the same base class and provide their own version of a method.
-
-
-
-*** How do you secure api calls with JWT tokens ? (Practice in code) :
-
-Note: 
-* Created a Spring Boot project with Web + Security + JWT dependencies.
-* Added /auth/login endpoint to authenticate user and return JWT token.
-* Implemented JwtService to generate and validate tokens using a secret key (HS256).
-* Built JwtAuthFilter extending OncePerRequestFilter to intercept requests and validate tokens.
-* Configured SecurityConfig to disable CSRF, form login, and basic auth, set session stateless, and add JWT filter before UsernamePasswordAuthenticationFilter.
-* Allowed /auth/** as public and secured all other endpoints.
-* Tested with curl: first obtained token from /auth/login, then accessed protected /api/hello using Authorization: Bearer <token>.
-* Verified stateless JWT-based authentication working (no sessions, only token validation).
 
 *** What agorithms exist ?
   
@@ -505,3 +340,201 @@ I needed to upgrade dependencies, replace outdated ones, or adjust code to match
 Build and CI/CD updates
 Maven and Gradle plugins sometimes required updates to support newer Java versions.
 Build pipelines also needed JDK changes.
+
+
+         *** Spring questions ***
+
+         *** How do you disable auto-configuration for a specific class? *** 
+
+In Spring Boot, you disable auto-configuration for a specific class using the exclude attribute on @SpringBootApplication (or @EnableAutoConfiguration).
+
+✅ Short Interview-Ready Answer
+
+You can disable auto-configuration for a specific class by using the exclude attribute of @SpringBootApplication, for example:
+
+@SpringBootApplication(
+exclude = {
+DataSourceAutoConfiguration.class
+}
+)
+public class MyApp {
+public static void main(String[] args) {
+SpringApplication.run(MyApp.class, args);
+}
+}
+
+✅ Alternative: @SpringBootApplication(excludeName = "...")
+
+If you don’t want to reference the class directly:
+
+@SpringBootApplication(
+excludeName = {
+"org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration"
+}
+)
+public class MyApp {}
+
+🔧 Also possible in application.properties
+spring.autoconfigure.exclude=org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+
+
+            *** How do you bind configuration properties to a POJO (@ConfigurationProperties)? ***
+
+✅ How to Bind Configuration Properties to a POJO
+
+Create a POJO that holds your properties.
+
+Annotate it with @ConfigurationProperties(prefix = "your.prefix").
+
+Register it as a Spring bean using @Component or by enabling configuration properties.
+
+📌 Example
+1. application.yml
+   app:
+   name: EuroAsianBakery
+   timeout: 5000
+
+2. POJO with @ConfigurationProperties
+   @Component
+   @ConfigurationProperties(prefix = "app")
+   public class AppProperties {
+
+   private String name;
+   private int timeout;
+
+   // getters and setters
+   }
+
+3. Alternatively: Enable it in a config class
+
+(If you don’t want @Component on the POJO)
+
+@Configuration
+@EnableConfigurationProperties(AppProperties.class)
+public class AppConfig {
+}
+
+🔍 How It Works
+
+Spring Boot scans application.properties / application.yml
+
+Finds all keys under app.*
+
+Automatically maps them to fields in the POJO based on name matching
+
+⭐ Optional: Validate Configuration Properties
+@ConfigurationProperties(prefix = "app")
+@Validated
+public class AppProperties {
+
+    @NotBlank
+    private String name;
+
+    @Min(1000)
+    private int timeout;
+}
+
+
+               *** Difference between @Value and @ConfigurationProperties? ***
+
+✅ Difference Between @Value and @ConfigurationProperties
+1. Purpose
+   @Value
+
+Injects single values from properties or environment variables.
+
+@ConfigurationProperties
+
+Binds groups of properties (structured configuration) into a POJO.
+
+✅ 2. Usage
+@Value (simple, one-off values)
+@Value("${app.name}")
+private String name;
+
+@ConfigurationProperties (multiple related fields)
+@ConfigurationProperties(prefix = "app")
+public class AppProperties {
+private String name;
+private int timeout;
+}
+
+✅ 3. Binding type
+Feature	@Value	@ConfigurationProperties
+Supports complex/nested properties	❌ No	✅ Yes
+Supports type conversion	⚠️ Limited	✅ Strong (lists, maps, durations, etc.)
+Bulk binding	❌ No	✅ Yes
+Relaxed binding (app-name, app_name)	❌ No	✅ Yes
+✅ 4. When to Use Which?
+Use @Value when:
+
+You need one or two simple values.
+
+Example: a single URL, a flag, or a timeout.
+
+Use @ConfigurationProperties when:
+
+You have multiple related properties.
+
+Need type-safe configuration.
+
+Need nested structures, lists, maps.
+
+Example: DB settings, AWS credentials, custom API config.
+
+✅ 5. Performance
+
+@ConfigurationProperties is more efficient for many properties (bound once).
+
+@Value performs expression evaluation (SpEL) for each injection → slower if heavily used.
+
+
+               *** What is the purpose of @Profile and how do you activate a profile? *** 
+
+✅ What is the purpose of @Profile?
+
+@Profile is used to conditionally enable beans or configuration classes depending on the active Spring environment profile.
+
+Purpose
+
+To load different beans for dev, test, prod, etc.
+
+To separate environment-specific logic.
+
+To avoid running unwanted beans in certain environments (e.g., mock services in dev, real services in prod).
+
+Example:
+@Profile("dev")
+@Service
+public class DevEmailService implements EmailService { ... }
+
+@Profile("prod")
+@Service
+public class ProdEmailService implements EmailService { ... }
+
+
+Spring will create only the bean that matches the active profile.
+
+✅ How do you activate a profile?
+
+You can activate a profile in several ways:
+
+1. In application.properties
+   spring.profiles.active=dev
+
+2. In application.yml
+   spring:
+   profiles:
+   active: dev
+
+3. From command line
+   java -jar app.jar --spring.profiles.active=prod
+
+4. Using environment variables
+   export SPRING_PROFILES_ACTIVE=dev
+
+5. In tests
+   @ActiveProfiles("test")
+   class MyTests { }
+
+               ***  *** 

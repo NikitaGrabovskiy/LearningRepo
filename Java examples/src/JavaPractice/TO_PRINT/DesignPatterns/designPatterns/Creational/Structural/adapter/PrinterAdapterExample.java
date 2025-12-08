@@ -1,4 +1,4 @@
-package JavaPractice.DesignPatterns.Structural.adapter;
+package JavaPractice.TO_PRINT.DesignPatterns.designPatterns.Creational.Structural.adapter;
 
 public class PrinterAdapterExample {
 

@@ -1,4 +1,4 @@
-package JavaPractice.DesignPatterns.Behaviour.strategy;
+package JavaPractice.TO_PRINT.DesignPatterns.designPatterns.Creational.Behaviour.strategy;
 
 public class Main {
 

@@ -1,4 +1,4 @@
-package JavaPractice.DesignPatterns.singleton;
+package JavaPractice.TO_PRINT.DesignPatterns.designPatterns.Creational.singleton;
 
 public class Logger {
 

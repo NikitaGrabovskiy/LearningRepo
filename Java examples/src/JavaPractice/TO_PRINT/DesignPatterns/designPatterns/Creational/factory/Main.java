@@ -1,4 +1,4 @@
-package JavaPractice.DesignPatterns.factory;
+package JavaPractice.TO_PRINT.DesignPatterns.designPatterns.Creational.factory;
 
 class Circle implements Shape{
     @Override

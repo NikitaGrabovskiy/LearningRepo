@@ -8,7 +8,7 @@ Bold, surrounded by ** ** - mean noted
 1) What design patterns do you know ? (NOTE)
 2) What algorithms do you know ? (TO NOTE!)
 3) **What are methods of Object class in Java ? (11 methods)**
-4) What is polimorphyzm (NOTE! Carefully it is not what I am think its)
+4) **What is polimorphyzm**
 5) Stack vs Heap memory (Read note and compare to Chat gpt (Make more appropiate answer))
 6) How garbage collection works? 
 7) Difference between sleep() and wait()
@@ -22,14 +22,14 @@ Bold, surrounded by ** ** - mean noted
 15) What is the difference between composition and inheritance? 
 16) What is the purpose of the super keyword? How can you use it
 17) How do you create a thread in Java?
-18) What is the difference between Runnable and Callable?
+18) **What is the difference between Runnable and Callable?**
 19) What are thread-safe collections in Java?
 20) What are some ways to prevent thread starvation and deadlock?
 21) **Explain the role of ExecutorService and thread pools**. 
 22) What is a Future and how is it used?
 23) difference between Future and CompletableFuture
 23) What is the difference between a JAR and a WAR?
-24) Can you make different access modifiers for methods in child classes? 
+24) **Can you make different access modifiers for methods in child classes?**
 25) **Can you change exception thrown by parent class in child class?**
 26) **Can class be static ? If yes why do we need it?**
 27) **What is deadlock? What is thread starvation?**
@@ -63,3 +63,14 @@ Bold, surrounded by ** ** - mean noted
 55) List most important implementations of List
 56) List most important implementations of Map
 57) List most important implementations of Set
+58) **What is Jit?**
+59) Time complexity for harsh map search and tree map
+60) **Can there be multiple public static void method in program ?**
+61) **Can you overload method by changing return type?**
+62) **Can you have multiple catch block?**
+63) **Is array a java class?**
+64) What is String pool ? 
+65) Implementations of Queue 
+66) **Extend Thread vs implement Runnable explain**
+67) active vs passive locks
+68) Can you do finally without catch ? 

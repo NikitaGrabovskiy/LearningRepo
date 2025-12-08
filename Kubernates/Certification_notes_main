@@ -184,15 +184,110 @@ Yaml for deployment looks like the replica set yaml but the kind is Deployment
 Deployment automatically creates a replica set so if you run a
     kubectl get replicaset - you will see a new one created in the name of the deployment
 
+                            *** NOTE ***
+
+In yaml file Kind always case sensitive
+
+Kind: Deployment
+
+                            *** Service ***
+
+A Service in Kubernetes provides a stable IP address, DNS name, and load-balancing layer
+for accessing a group of Pods. Since Pods are dynamic and their IPs change when they restart
+or move between nodes, a Service ensures clients always have a consistent way to reach them.
+It uses label selectors to find matching Pods and distributes traffic across them through
+kube-proxy, making internal or external communication reliable regardless of Pod churn.
 
 
 
+                Service type  NodePort - maps pod to a node port
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: myapp-nodeport
+spec:
+  type: NodePort            # Exposes the service externally on each node’s IP at a static port
+  selector:                 # Defines which Pods this service sends traffic to
+    app: myapp              # Must match the Pod label "app=myapp"
+  ports:
+    - port: 80              # The Service port (clients inside cluster use this)
+      targetPort: 8080      # The port on the Pod container
+      nodePort: 30080       # External static port on the Node (range 30000–32767)
+      protocol: TCP         # Protocol used for the traffic (default is TCP)
 
 
+port is only required field - if target port is not specified - it will assume that is is the same as port
+If nodePort is not specified - it will assume that it is the same as port
+
+If pods deployed on different nodes - it will map each pod to its node on the same port. There will be a single
+service created.
 
 
+                        A ClusterIP is the default Service type in Kubernetes and is used to
+                        expose your application inside the cluster only.
+
+Key points
+* It gives the Service a stable internal IP address (ClusterIP).
+* The Service is not accessible from outside the cluster.
+* Used for internal communication between microservices (e.g., frontend → backend, API → DB proxies).
+* Kubernetes load-balances traffic across the Pods that match its selector.
+* Each Service also gets an internal DNS name like:
+    myservice.default.svc.cluster.local.
+
+ClusterIP = internal-only load balancer with a stable IP for Pods.
+
+                    LoadBalancer type - only supported in cloud (AWS, GCP, Azure), if you run it outside of
+supported cloud it will behave as nodePort type
 
 
+                *** Namespaces ***
 
 
+            kube-system namespace
 
+This namespace contains core Kubernetes system components that the cluster needs to function.
+Examples running in kube-system:
+
+* kube-apiserver
+* kube-controller-manager
+* kube-scheduler
+* kube-dns / coredns
+* kube-proxy
+* CNI plugin pods (Calico, Flannel, Weave, etc.)
+
+You should not deploy your own applications into this namespace.
+
+In short:
+kube-system = Kubernetes’ internal control-plane and system pods.
+
+        kube-public namespace
+
+A readable-by-everyone namespace (even unauthenticated users).
+Usually nearly empty.
+Kubernetes uses it mainly for sharing public information across the cluster.
+Often contains a ConfigMap called cluster-info, which is used by kubeadm during cluster bootstrap.
+
+
+You can assign a quota (limit) of resources consumed by namespace - and kubernates will ensure that resources
+in the namespace does not consume more
+
+You can add namespace option to medadata section of pod definition file - it will ensure that pod will always
+be created in the namespace
+
+                            Resource quota yaml
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: my-namespace-quota
+  namespace: my-namespace
+spec:
+  hard:
+    pods: "10"                 # Max number of Pods allowed
+    requests.cpu: "2"          # Total CPU requests cannot exceed 2 cores
+    requests.memory: "4Gi"     # Total memory requests cannot exceed 4Gi
+    limits.cpu: "4"            # Total CPU limits cannot exceed 4 cores
+    limits.memory: "8Gi"       # Total memory limits cannot exceed 8Gi
+    services: "5"              # Max number of Services allowed
+    configmaps: "10"           # Max number of ConfigMaps
+    persistentvolumeclaims: "4"  # Max PVCs in this namespace

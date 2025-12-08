@@ -1,1 +1,3 @@
 1) Tell me about you management (Leadership) experience (Leading 3 new teammates, All team offshore - I am the only one onsite)
+2) 
+3) 
