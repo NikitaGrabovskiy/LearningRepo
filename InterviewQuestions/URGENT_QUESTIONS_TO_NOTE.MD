@@ -538,3 +538,15 @@ You can activate a profile in several ways:
    class MyTests { }
 
                ***  *** 
+
+By default, Spring Boot defines four different values as the health Status:
+
+UP — The component or subsystem is working as expected
+
+DOWN — The component is not working
+
+OUT_OF_SERVICE — The component is out of service temporarily
+
+UNKNOWN — The component state is unknown
+
+               *** health statuses provided by SpringBoot Actuator *** 

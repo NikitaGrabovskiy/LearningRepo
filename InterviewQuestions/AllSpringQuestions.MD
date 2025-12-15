@@ -68,5 +68,16 @@
 68) You need to process tasks asynchronously to improve performance. How do you design it?
 69) You want to monitor app health in production. How do you configure Actuator?
 70) You need zero-downtime deployment for a Spring Boot app. What are your strategies?
-71) 
+71) What kind of tests exist in a spring boot
 72) org.springframework.transaction.annotation.Transactional - is the correct note
+73) @DependsOn
+74) What are the difference between @Mock and @MockBean ?
+75) health statuses provided by SpringBoot Actuator
+76) BeanPostProcessor and BeanFactoryPostProcessors.
+
+
+
+
+
+Spring certification pass:Ts19@8626
+Email - artist1

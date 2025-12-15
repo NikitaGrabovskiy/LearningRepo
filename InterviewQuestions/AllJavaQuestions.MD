@@ -10,10 +10,10 @@ Bold, surrounded by ** ** - mean noted
 3) **What are methods of Object class in Java ? (11 methods)**
 4) **What is polimorphyzm**
 5) Stack vs Heap memory (Read note and compare to Chat gpt (Make more appropiate answer))
-6) How garbage collection works? 
+6) 
 7) Difference between sleep() and wait()
 8) HashSet vs TreeSet (? Note)
-9) ** Difference between Abstract class and Interface **
+9) **Difference between Abstract class and Interface**
 10) **Explain the differences between JDK, JRE, and JVM.**
 11) **Java 9, Java 14, 21 features**
 12) How HashMap works internally
@@ -69,7 +69,7 @@ Bold, surrounded by ** ** - mean noted
 61) **Can you overload method by changing return type?**
 62) **Can you have multiple catch block?**
 63) **Is array a java class?**
-64) What is String pool ? 
+64) **What is String pool?**
 65) Implementations of Queue 
 66) **Extend Thread vs implement Runnable explain**
 67) active vs passive locks

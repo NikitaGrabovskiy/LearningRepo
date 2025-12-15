@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/LearningRepo.iml" filepath="$PROJECT_DIR$/LearningRepo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PrintedDocuments/PrintedDocuments.iml" filepath="$PROJECT_DIR$/PrintedDocuments/PrintedDocuments.iml" />
       <module fileurl="file://$PROJECT_DIR$/Tonus_practice/Tonus_practice.iml" filepath="$PROJECT_DIR$/Tonus_practice/Tonus_practice.iml" />
     </modules>
   </component>

@@ -109,10 +109,48 @@ kubectl config set-context --current --namespace=<namespace-name>
 
  --all-namespaces
 
+                                         ******
+You can run apply command not just for one object but for the whole package:
+
+kubectl apply -f /path/files
+                                         ******
+
+--dry-run: By default as soon as the command is run, the resource will be created.
+If you simply want to test your command , use the --dry-run=client option. This will not create the resource,
+ instead, tell you whether the resource can be created and if your command is right.
+
+-o yaml: This will output the resource definition in YAML format on screen.
+
+kubectl scale deployment nginx --replicas=4
+
+Another way to do this is to save the YAML definition to a file and modify
+kubectl create deployment nginx --image=nginx --dry-run=client -o yaml > nginx-deployment.yaml
 
 
+                                          *****
+List all possible resources - if for example forget resource name:
+
+    kubectl api-resources
+
+After you find resource you can do that to get more info
+
+    kubectl explain pod --recursive
+
+    or to get even more info on spec do
+
+    kubectl explain service.spec
 
 
+                                        ****
+
+                 REMEMBER ! When you do created - you do not specify resource type you just do:
+
+                 kubectl create -f filename.yaml         (no create pod, or create service)
+
+                                        ****
+
+     When you create a service with imperative commands you have to specify a type
+kubectl create svc <type> <name> [flags]
 
 
 
