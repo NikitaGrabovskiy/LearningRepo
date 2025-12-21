@@ -20,7 +20,7 @@ Bold, surrounded by ** ** - mean noted
 13) **What is autoboxing and unboxing?**
 14) What are the default values for primitive data types in Java? Their sizes
 15) What is the difference between composition and inheritance? 
-16) What is the purpose of the super keyword? How can you use it
+16) **What is the purpose of the super keyword? How can you use it**
 17) How do you create a thread in Java?
 18) **What is the difference between Runnable and Callable?**
 19) What are thread-safe collections in Java?
@@ -47,10 +47,10 @@ Bold, surrounded by ** ** - mean noted
 39) hash collisions
 40) **Difference between checked and unchecked exceptions**
 41) What is a classloader? Types of classloaders in Java.
-42) How does HashMap work internally?
-43) What is the load factor and initial capacity of a HashMap?
-44) What is the difference between fail-fast and fail-safe iterators?
-45) What is the difference between Iterator and ListIterator?
+42)
+43) **What is the load factor and initial capacity of a HashMap?**
+44) **What is the difference between fail-fast and fail-safe iterators?**
+45) **What is the difference between Iterator and ListIterator?**
 46) What is the difference between Comparable and Comparator?
 47) What is a lock in Java concurrency? How is ReentrantLock different from synchronized?
 48) What is the Java Memory Model (JMM) in simple terms?
@@ -58,7 +58,7 @@ Bold, surrounded by ** ** - mean noted
 50) What is the difference between minor GC and major/full GC?
 51) What is ClassNotFoundException vs NoClassDefFoundError?
 52) What is serialVersionUID and why is it important?
-53) What is the difference between shallow copy and deep copy in Java?
+53) **What is the difference between shallow copy and deep copy in Java?**
 54) How do you create an immutable list or map in Java?
 55) List most important implementations of List
 56) List most important implementations of Map
@@ -74,3 +74,11 @@ Bold, surrounded by ** ** - mean noted
 66) **Extend Thread vs implement Runnable explain**
 67) active vs passive locks
 68) Can you do finally without catch ? 
+69) **What is queue in java and what are it's most important methods?**
+70) **Difference between queue and dequeue**
+71) **How HashSet works internally?**
+72) transient key word
+73) **How ConcurrentHashMap different from HashMap?**
+74) HashMap vs Hashtable
+
+

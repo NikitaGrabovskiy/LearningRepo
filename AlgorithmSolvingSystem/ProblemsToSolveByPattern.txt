@@ -1,0 +1,234 @@
+
+                    Do I by one using system strictly in order. Mark with Done when Done
+                    Understand each pattern and category
+
+
+1️⃣ Arrays & Hashing (8)
+
+DONE #1 – Two Sum
+
+#217 – Contains Duplicate
+
+#242 – Valid Anagram
+
+#238 – Product of Array Except Self
+
+#53 – Maximum Subarray
+
+#88 – Merge Sorted Array
+
+#169 – Majority Element
+
+#121 – Best Time to Buy and Sell Stock
+
+2️⃣ Two Pointers (7)
+
+DONE #125 – Valid Palindrome
+
+#167 – Two Sum II – Input Array Is Sorted
+
+#26 – Remove Duplicates from Sorted Array
+
+#11 – Container With Most Water
+
+#42 – Trapping Rain Water
+
+#283 – Move Zeroes
+
+#344 – Reverse String
+
+3️⃣ Sliding Window (7)
+
+DONE #3 – Longest Substring Without Repeating Characters
+
+#424 – Longest Repeating Character Replacement
+
+#209 – Minimum Size Subarray Sum
+
+#567 – Permutation in String
+
+#438 – Find All Anagrams in a String
+
+#643 – Maximum Average Subarray I
+
+#239 – Sliding Window Maximum
+
+4️⃣ Stack / Monotonic Stack (7)
+
+DONE #20 – Valid Parentheses
+
+#155 – Min Stack
+
+#739 – Daily Temperatures
+
+#496 – Next Greater Element I
+
+#503 – Next Greater Element II
+
+#84 – Largest Rectangle in Histogram
+
+#150 – Evaluate Reverse Polish Notation
+
+5️⃣ Binary Search (7)
+
+DONE #704 – Binary Search
+
+#35 – Search Insert Position
+
+#33 – Search in Rotated Sorted Array
+
+#153 – Find Minimum in Rotated Sorted Array
+
+#162 – Find Peak Element
+
+#875 – Koko Eating Bananas
+
+#4 – Median of Two Sorted Arrays
+
+6️⃣ Linked List (7)
+
+#206 – Reverse Linked List
+
+#21 – Merge Two Sorted Lists
+
+#141 – Linked List Cycle
+
+#19 – Remove Nth Node From End of List
+
+#143 – Reorder List
+
+#160 – Intersection of Two Linked Lists
+
+#138 – Copy List with Random Pointer
+
+7️⃣ Trees – DFS / BFS (10)
+
+#104 – Maximum Depth of Binary Tree
+
+#226 – Invert Binary Tree
+
+#543 – Diameter of Binary Tree
+
+#110 – Balanced Binary Tree
+
+#100 – Same Tree
+
+#102 – Binary Tree Level Order Traversal
+
+#236 – Lowest Common Ancestor of a Binary Tree
+
+#98 – Validate Binary Search Tree
+
+#230 – Kth Smallest Element in a BST
+
+#105 – Construct Binary Tree from Preorder and Inorder
+
+8️⃣ Backtracking (6)
+
+#78 – Subsets
+
+#90 – Subsets II
+
+#46 – Permutations
+
+#39 – Combination Sum
+
+#17 – Letter Combinations of a Phone Number
+
+#79 – Word Search
+
+9️⃣ Heap / Priority Queue (6)
+
+#215 – Kth Largest Element in an Array
+
+#347 – Top K Frequent Elements
+
+#295 – Find Median from Data Stream
+
+#23 – Merge k Sorted Lists
+
+#621 – Task Scheduler
+
+#973 – K Closest Points to Origin
+
+🔟 Intervals (5)
+
+#56 – Merge Intervals
+
+#57 – Insert Interval
+
+#435 – Non-overlapping Intervals
+
+#252 – Meeting Rooms
+
+#253 – Meeting Rooms II
+
+1️⃣1️⃣ Greedy (6)
+
+#55 – Jump Game
+
+#45 – Jump Game II
+
+#134 – Gas Station
+
+#846 – Hand of Straights
+
+#763 – Partition Labels
+
+#452 – Minimum Number of Arrows to Burst Balloons
+
+1️⃣2️⃣ Dynamic Programming (10)
+
+#70 – Climbing Stairs
+
+#198 – House Robber
+
+#213 – House Robber II
+
+#322 – Coin Change
+
+#300 – Longest Increasing Subsequence
+
+#1143 – Longest Common Subsequence
+
+#416 – Partition Equal Subset Sum
+
+#62 – Unique Paths
+
+#91 – Decode Ways
+
+#72 – Edit Distance
+
+1️⃣3️⃣ Graphs (8)
+
+#200 – Number of Islands
+
+#133 – Clone Graph
+
+#207 – Course Schedule
+
+#210 – Course Schedule II
+
+#417 – Pacific Atlantic Water Flow
+
+#994 – Rotting Oranges
+
+#127 – Word Ladder
+
+#684 – Redundant Connection
+
+1️⃣4️⃣ Bit Manipulation (4)
+
+#136 – Single Number
+
+#191 – Number of 1 Bits
+
+#338 – Counting Bits
+
+#190 – Reverse Bits
+
+1️⃣5️⃣ Union Find (2)
+
+#323 – Number of Connected Components in an Undirected Graph
+
+#721 – Accounts Merge

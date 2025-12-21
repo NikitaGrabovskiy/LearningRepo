@@ -1,0 +1,52 @@
+                                    Document Each type and subtype
+
+1️⃣ Arrays & Hashing
+2️⃣ Two Pointers
+            Opposite-direction pointers (left ↔ right)
+            Same-direction pointers (fast & slow)
+            Fixed-size window (two pointers)
+            Variable-size window (sliding window)
+            Multiple pointers (e.g., 3Sum / N-Sum)
+3️⃣ Sliding Window
+            Fixed-size sliding window
+            Variable-size (dynamic) sliding window
+            Sliding window with frequency map
+            Sliding window with monotonic deque
+            Sliding window with at-most / at-least constraint
+
+4️⃣ Stack / Monotonic Stack
+5️⃣ Binary Search
+6️⃣ Linked List
+7️⃣ Trees – DFS / BFS
+            DFS (Depth-First Search)
+            Preorder traversal
+            Inorder traversal
+            Postorder traversal
+            Recursive DFS
+            Iterative DFS (using stack)
+
+            BFS (Breadth-First Search)
+            Level-order traversal
+            Zigzag level-order traversal
+            BFS using queue
+            Multi-source BFS (tree variants)
+
+8️⃣ Backtracking
+            Backtracking is a technique where you:
+            1. Choose an option
+            2. Explore further
+            3. Undo the choice
+            4. Try the next option
+
+            🧠 Core idea (one sentence)
+            Try all possibilities, and backtrack (undo) when a path doesn’t work.
+
+9️⃣ Heap / Priority Queue
+🔟 Intervals
+1️⃣1️⃣ Greedy
+1️⃣2️⃣ Dynamic Programming
+            Dynamic Programming solves problems by breaking them into overlapping
+            subproblems and reusing results instead of recomputing them.
+1️⃣3️⃣ Graphs
+1️⃣4️⃣ Bit Manipulation
+1️⃣5️⃣ Union Find

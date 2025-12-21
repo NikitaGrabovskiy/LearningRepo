@@ -2,7 +2,6 @@ package JavaPractice;
 
 public class RotateImageExample {
 
-
     public static void main(String[] args) {
 
 
@@ -15,9 +14,9 @@ public class RotateImageExample {
         11 -> 11
         12 -> 21
 
-        20 -> 00
+        20.txt -> 00
         21 -> 10
-        22 -> 20
+        22 -> 20.txt
 
         */
 

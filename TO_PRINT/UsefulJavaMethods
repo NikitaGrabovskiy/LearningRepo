@@ -1,0 +1,13 @@
+                *** Char methods ***
+Character.isLetter(ch);
+Character.toLowerCase(ch)
+Character.isLetterOrDigit(ch)
+
+
+                *** REMEMBER ***
+
+Array has just property, it is not a function:
+    length
+
+String has it as function:
+    length()
