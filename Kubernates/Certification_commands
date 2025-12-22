@@ -152,10 +152,36 @@ After you find resource you can do that to get more info
      When you create a service with imperative commands you have to specify a type
 kubectl create svc <type> <name> [flags]
 
+                *** To see Scheduler running and all the other elements of control plane run the command ***
+                    (get all pods from kube-system)
 
+kubectl get pods -n kube-system
 
+                *** to get more details on  get pods***
 
+kubectl get pods -o wide
 
+                *** ***
 
+To get pods by label value:
+        kubectl get pods -l <Label_name>=<label_value>
+
+                *** Get all objects by label (All, like replicasets, pods, and so on)***
+
+kubectl get all -l env=prod
+
+                *** Find pods with several labels ***
+
+kubectl get pods -l bu=finance,tier=frontend,env=prod
+
+                 *** Command to taint a node ***
+kubectl taint nodes <node-name> key=<Value>:<Effect>
+
+                            value → It’s just a label-like value for the taint key, meaningful only to you
+
+                                Effects:
+                            NoSchedule – new Pods will not be scheduled
+                            PreferNoSchedule – avoid scheduling if possible
+                            NoExecute – evict existing Pods + block new ones
 
 

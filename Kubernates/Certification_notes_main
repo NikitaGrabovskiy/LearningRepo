@@ -291,3 +291,77 @@ spec:
     services: "5"              # Max number of Services allowed
     configmaps: "10"           # Max number of ConfigMaps
     persistentvolumeclaims: "4"  # Max PVCs in this namespace
+
+
+                                            Scheduling section
+
+There is a "nodeName" specification that kubernates attach to pod yaml after pod is schedulied (You do not
+specify the property yourself) - Scheduler looking for a nodes that does not have the property and tries to schedule it.
+
+If there is not she
+
+To manually schedule a pod - you need to manually add a node to yaml file. But you can only do it at pod creation time.
+If you do it after pod is created - kubernates will not allow you to do that.
+
+If you want to do it after pod is created - you need to create a Binding object and make a post call api. (It will mimic
+what the actual pod does.)
+
+        Object yaml:
+
+apiVersion: v1 kind: Pod metadata:
+name: nginx labels:
+name: nginx spec:
+containers:
+- name: nginx
+image: nginx ports:
+- containerPort: 8080 nodeName: node02
+
+        The api call to schedule pod using yaml :
+
+ curl --header "Content-Type:application/json" --request
+ POST --data http://$SERVER/api/v1/namespaces/default/pods/$PODNAME/binding/
+
+
+                                Labels
+
+Note: when you create a relica set or service - you can spesify labels in 2 places :
+    One for discovery of the replica set and one inside template for discovery of pods.
+
+                            Difference between labels and annotations:
+
+
+Labels → used to identify and select resources (Services, Deployments use them)
+Annotations → used to store extra information (for tools, humans, metadata)
+
+Key difference:
+
+Labels are queryable & affect behavior
+Annotations are not queryable & do not affect behavior
+
+Rule of thumb:
+Labels = selection
+Annotations = information
+
+                    Taints and Tolerations
+
+Taints → applied to nodes to repel Pods
+Tolerations → applied to Pods to allow them onto tainted nodes
+
+👉 Pods run on a tainted node only if they have a matching toleration.
+
+
+To add tolerations to pod:
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+spec:
+  tolerations:
+  - key: "dedicated"
+    operator: "Equal"
+    value: "gpu"
+    effect: "NoSchedule"
+  containers:
+  - name: app
+    image: nginx
