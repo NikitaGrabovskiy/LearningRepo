@@ -184,4 +184,86 @@ kubectl taint nodes <node-name> key=<Value>:<Effect>
                             PreferNoSchedule – avoid scheduling if possible
                             NoExecute – evict existing Pods + block new ones
 
+                            *** To label nodes (For nodes selectors for example) ***
+
+kubectl label nodes <node-name> <label-key>=<label-value>
+
+                            *** grep case-insensitive ***
+
+                            Add:
+
+                            -i
+
+kubectl describe node node01 | grep -i Label
+
+                            *** for DaemonSets use "ds", full "DaemonSet" gives errors ***
+
+kubectl describe ds kube-proxy -n=kube-system
+
+
+                            *** Command option when creating pods ***
+
+kubectl run static-bysybox --image=busybox --restart=Never --dry-run=client -o yaml --command -- sleep 1000 > static-busybox.yaml
+
+                            *** To ssh to a specific node **
+
+Get node InternalIP address by running
+
+kubctl get nodes -o wide
+
+when
+
+ssh <INTERNAL_IP>
+
+                             *** You can run command to see pod status in a real time***
+
+kubectl get pods --watch
+
+
+                            *** To list priority classes ***
+
+kubectl get priorityclass
+
+        Example:
+
+apiVersion: scheduling.k8s.io/v1
+kind: PriorityClass
+metadata:
+  name: high-priority
+value: 100000
+globalDefault: false
+description: "High priority workload"
+
+
+        Pod using it:
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: critical-pod
+spec:
+  priorityClassName: high-priority
+  containers:
+  - name: app
+    image: nginx
+
+
+
+By default each pod has a priority value of zero.  If you want change it - you create  a new PriorityClass and add a
+property :
+
+    globalDefault: true
+
+Another field you can add to PriorityClass is :
+
+    preeemptionPolicy: PreemptLowerPriority
+
+It will decide if the existed lower priority pods needs to be deleted or not if no capacity left
+
+    You can seet it to "never" - it will never delete existing pods
+
+
+
+
+
 
