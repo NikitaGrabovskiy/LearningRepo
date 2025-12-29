@@ -582,8 +582,52 @@ to list priority classes:
    kubectl get priorityclass
 
 
+        Example:
+
+apiVersion: scheduling.k8s.io/v1
+kind: PriorityClass
+metadata:
+  name: high-priority
+value: 100000
+globalDefault: false
+description: "High priority workload"
 
 
+        Pod using it:
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: critical-pod
+spec:
+  priorityClassName: high-priority
+  containers:
+  - name: app
+    image: nginx
+
+
+
+By default each pod has a priority value of zero.  If you want change it - you create  a new PriorityClass and add a
+property :
+
+    globalDefault: true
+
+Another field you can add to PriorityClass is :
+
+    preeemptionPolicy: PreemptLowerPriority
+
+It will decide if the existed lower priority pods needs to be deleted or not if no capacity left
+
+    You can seet it to "never" - it will never delete existing pods
+
+
+                            Multiple Schedulers:
+
+You can add:
+
+SchedulerName: <SCHEDULER_NAME>
+
+to pod spec - so it will be picked up by a specific scheduler
 
 
 

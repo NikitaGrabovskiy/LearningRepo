@@ -10,12 +10,13 @@
 
 66 - resource limits,
 73 - static pods
-
+78 - multiple schedulers
 
 
 
         Practice till perfect:
 
 75 - static pods lab
+79 - multiple schedulers
 
 

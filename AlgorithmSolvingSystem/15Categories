@@ -31,17 +31,46 @@
             BFS using queue
             Multi-source BFS (tree variants)
 
-8️⃣ Backtracking
-            Backtracking is a technique where you:
-            1. Choose an option
-            2. Explore further
-            3. Undo the choice
-            4. Try the next option
+            Notes:
+                ** A binary tree is a tree data structure where each node has at most two children,
+                called the left and right child.
 
-            🧠 Core idea (one sentence)
-            Try all possibilities, and backtrack (undo) when a path doesn’t work.
+                *** A binary tree depth search complexity is O(n) (Number of nodes) (Each node traversed once)
+
+
+
+8️⃣ Backtracking
+            Core idea (one sentence)
+            Try a choice → explore deeper → if it doesn’t work, undo the choice and try the next one.
+
+            Notes:
+
+            *** LeetCode 78 (Subsets, classic example) — Complexity (short)
+            Time Complexity: O(n · 2ⁿ)
+            There are 2ⁿ subsets
+            Each subset copy can take up to O(n)
+            Space Complexity: O(2ⁿ)
+            To store all subsets
+            Excluding output recursion/iteration overhead
 
 9️⃣ Heap / Priority Queue
+
+            Notes:
+            *** In algorithms, a stack is a LIFO data structure used for DFS and backtracking, while a heap is
+            a tree-based data structure used as a priority queue to efficiently retrieve minimum or maximum elements.
+
+            *** To use with java:
+
+                PriorityQueue<Integer> pq =
+                    new PriorityQueue<>(Collections.reverseOrder());
+
+                Find second largest element:
+
+                            maxHeap.poll();              // remove largest
+                            int secondLargest = maxHeap.peek();
+
+
+
 🔟 Intervals
 1️⃣1️⃣ Greedy
 1️⃣2️⃣ Dynamic Programming

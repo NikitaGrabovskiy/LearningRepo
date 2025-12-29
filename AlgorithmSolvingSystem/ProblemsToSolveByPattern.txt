@@ -87,7 +87,7 @@ DONE #704 – Binary Search
 
 6️⃣ Linked List (7)
 
-#206 – Reverse Linked List
+DONE #206 – Reverse Linked List
 
 #21 – Merge Two Sorted Lists
 
@@ -103,7 +103,7 @@ DONE #704 – Binary Search
 
 7️⃣ Trees – DFS / BFS (10)
 
-#104 – Maximum Depth of Binary Tree
+DONE #104 – Maximum Depth of Binary Tree
 
 #226 – Invert Binary Tree
 
@@ -125,7 +125,7 @@ DONE #704 – Binary Search
 
 8️⃣ Backtracking (6)
 
-#78 – Subsets
+DONE #78 – Subsets
 
 #90 – Subsets II
 
@@ -139,7 +139,7 @@ DONE #704 – Binary Search
 
 9️⃣ Heap / Priority Queue (6)
 
-#215 – Kth Largest Element in an Array
+DONE #215 – Kth Largest Element in an Array
 
 #347 – Top K Frequent Elements
 
