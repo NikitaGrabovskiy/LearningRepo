@@ -1,4 +1,4 @@
-package JavaPractice.TO_PRINT.DesignPatterns.streams;
+package JavaPractice.streams;
 
 import java.util.List;
 import java.util.Map;

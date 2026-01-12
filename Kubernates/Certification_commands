@@ -232,6 +232,36 @@ kubectl get events -o wide
 
 kubectl logs <pod name>
 
+                            *** View metrics ***
+
+                            To see top nodes that consumes the most CPU and memory (Metric server needs to be installed) :
+kubectl top node
+
+                            The same but for pod :
+
+kubectl top pod
+
+                            To see the logs of pod :
+
+kubectl logs -f <POD NAME>        ( -f   for live logs)
+
+    Note :
+        If there are more than one container in pod you must specify the name of the container in the command:
+
+kubectl logs -f <POD NAME> <CONTAINER NAME>
+
+
+                            APPLICATION LIFECYCLE MANAGEMENT
+
+                        Status of rollout of deployment
+
+kubectl rollout status <DEPLOYMENT NAME>
+
+                        History of rollouts
+
+kubectl rollout history <DEPLOYMENT NAME>
+
+
 
 
 

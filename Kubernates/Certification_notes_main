@@ -629,13 +629,43 @@ SchedulerName: <SCHEDULER_NAME>
 
 to pod spec - so it will be picked up by a specific scheduler
 
+                            Admission Controllers
+
+Kubernetes Admission Controllers are request filters that run after authentication & authorization but before an object (Pod, Deployment, etc.) is stored in etcd.
+They can allow, reject, or modify requests.
+
+In one line
+
+➡️ They enforce cluster policies and apply defaults at creation/update time.
+
+        Example:
+
+NamespaceLifecycle Admission Controller
+
+What it does:
+* Checks that a namespace exists
+* Rejects requests to create resources in a non-existent namespace
+* Prevents creating new resources in a namespace that is being deleted (Terminating)
 
 
+                    APPLICATION LIFECYCLE MANAGEMENT
+
+Deployment strategies :
+
+             1) Recreate - when old deleted and new created after (Application downtime during deployment)
+
+             2) Rolling update - when you delete old pods and create a new version one by one - THIS IS DEFAULT (No downtime)
 
 
+                        If you need to update deployment image :
 
+kubectl set image <DEPLOYMENT NAME> <IMAGE NAME>
 
+        Note: it will not update the definition file
 
+                    To rollback to a previous version of deployment:
+
+kubectl rollout undo deployment <DEPLOYMENT NAME>
 
 
 

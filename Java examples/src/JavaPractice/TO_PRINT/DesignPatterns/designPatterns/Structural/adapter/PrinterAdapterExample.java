@@ -8,12 +8,7 @@ public class PrinterAdapterExample {
         PrinterAdapter printerAdapter = new PrinterAdapter(oldPrinter);
         printerAdapter.print("TEST");
 
-
-
     }
-
-
-
 }
 
 class OldPrinter{

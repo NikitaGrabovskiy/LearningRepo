@@ -1,0 +1,28 @@
+class Solution {
+    public int findCircleNum(int[][] isConnected) {
+
+        Set<Integer> remove = new HashSet();
+        int numberOfProvinces = 0;
+
+        for(int outer = 0; outer < isConnected.length; outer++){
+            if(!remove.contains(outer)){
+                removeProvince(isConnected,outer,remove);
+                numberOfProvinces ++;
+            }
+        }
+        return numberOfProvinces;
+    }
+
+    private void removeProvince(int [][] isConnected, int outer, Set<Integer> remove){
+            if(remove.contains(outer)){
+                return;
+            }
+            System.out.println(outer);
+            remove.add(outer);
+            for(int inner = 0; inner<isConnected[outer].length; inner++){
+                if(isConnected[outer][inner] == 1){
+                    removeProvince(isConnected, inner,remove);
+                }
+            }
+    }
+}

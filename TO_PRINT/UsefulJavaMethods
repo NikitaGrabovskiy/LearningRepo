@@ -11,3 +11,8 @@ Array has just property, it is not a function:
 
 String has it as function:
     length()
+
+
+
+            *** Convert to a String array ***
+        String[] array = collection.toArray(new String[collection.size()]);
