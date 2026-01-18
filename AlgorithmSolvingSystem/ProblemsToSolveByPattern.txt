@@ -2,12 +2,11 @@
                     Do I by one using system strictly in order. Mark with Done when Done
                     Understand each pattern and category
 
-
 1️⃣ Arrays & Hashing (8)
 
 DONE #1 – Two Sum
 
-#217 – Contains Duplicate
+DONE #217 – Contains Duplicate (Easy)
 
 #242 – Valid Anagram
 
@@ -25,7 +24,7 @@ DONE #1 – Two Sum
 
 DONE #125 – Valid Palindrome
 
-#167 – Two Sum II – Input Array Is Sorted
+DONE #167 – Two Sum II – Input Array Is Sorted
 
 #26 – Remove Duplicates from Sorted Array
 
@@ -226,6 +225,7 @@ DONE 547 – Number of Provinces
 721 – Accounts Merge
 
 1319 – Number of Operations to Make Network Connected
+
 
 
 

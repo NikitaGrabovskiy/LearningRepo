@@ -1,12 +1,3 @@
-        
-
-        Stopped at Java 9 question
-
-
-        ** Practice in order: first these questions, 
-            then question from Java questions file, then from Spring file and when from SQL and Angular**
-
-
 1. Tell me about yourself
 2. Tell me about your role in previous project
 3. Design an online book store ()
@@ -20,3 +11,4 @@
 11. Tell me about challenges that you faced at you recent project
 12. You update for next day standup
 13. Tell me about one of your applications end-to-end
+14. Tell me about you management (Leadership) experience (Leading 3 new teammates, All team offshore - I am the only one onsite)

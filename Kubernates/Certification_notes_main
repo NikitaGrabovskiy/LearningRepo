@@ -668,5 +668,188 @@ kubectl set image <DEPLOYMENT NAME> <IMAGE NAME>
 kubectl rollout undo deployment <DEPLOYMENT NAME>
 
 
+                                                    ***
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: echo-pod
+spec:
+  containers:
+    - name: echo-container
+      image: ubuntu
+      command: ["echo"]
+      args: ["Hello from Kubernetes"]
 
 
+command
+The executable that starts the container.
+👉 It overrides Docker ENTRYPOINT.
+
+args
+The parameters passed to that executable.
+👉 It overrides Docker CMD.
+
+Example:
+    command: ["ls"]
+    args: ["-l", "/"]
+
+                                            *** How to declare environment variables in container ***
+
+                                             Use env :
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: env-demo
+spec:
+  containers:
+  - name: ubuntu
+    image: ubuntu
+    command: ["/bin/sh"]
+    args: ["-c", "echo $APP_NAME && echo $APP_ENV && sleep 3600"]
+    env:
+    - name: APP_NAME
+      value: "payment-service"
+    - name: APP_ENV
+      value: "dev"
+
+                                        *** configMap ***
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+data:
+  APP_NAME: payment-service
+  APP_ENV: dev
+
+
+                    Pod that uses the map :
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: configmap-env-demo
+spec:
+  containers:
+  - name: app
+    image: busybox
+    command: ["sh", "-c", "echo APP_NAME=$APP_NAME && echo APP_ENV=$APP_ENV && sleep 3600"]
+    env:
+    - name: APP_NAME
+      valueFrom:
+        configMapKeyRef:
+          name: app-config
+          key: APP_NAME
+    - name: APP_ENV
+      valueFrom:
+        configMapKeyRef:
+          name: app-config
+          key: APP_ENV
+
+
+                                    ***
+
+                                Secrets
+
+                Create from literal
+
+kubectl create secret generic db-secret \
+  --from-literal=username=dbuser \
+  --from-literal=password=supersecret123
+
+                create from properties
+
+kubectl create secret generic api-secret \
+  --from-file=api-key.txt
+
+                Use in Pod by specifying specific keys
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: secret-env-pod
+spec:
+  containers:
+    - name: app
+      image: nginx
+      env:
+        - name: DB_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: db-secret
+              key: username
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: db-secret
+              key: password
+
+
+              Use in pod without specifying a specific key
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: app-with-secret
+spec:
+  containers:
+  - name: app
+    image: busybox
+    command: ["sh", "-c", "env && sleep 3600"]
+    envFrom:
+    - secretRef:
+        name: db-secret
+
+
+            Note : secretKeyRef use env vs secretRef use envFrom !!!
+
+                            *** Multy container ***
+
+There are 3 design patterns for multy containers:
+
+    1) Colocated containers
+
+       Just add 2 containers to the array, no guarantee that one starts before another
+
+
+    2) Init container
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-with-init-container
+spec:
+  initContainers:
+    - name: init-download-data
+      image: busybox
+      command: ["sh", "-c", "echo Initializing... && sleep 5"]
+  containers:
+    - name: main-app
+      image: nginx
+      ports:
+        - containerPort: 80
+
+
+    3) Sidecar container
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: init-container-restart-always
+spec:
+  initContainers:
+    - name: init-wait-for-service
+      image: busybox
+      restartPolicy: Always
+
+  containers:
+    - name: main-app
+      image: nginx
+      ports:
+        - containerPort: 80
+
+
+Side car will start first, the main app will wait till it started and starts only after that.
+Side car will be stopped after the main container stopped. Good example - logs app - needs to be intitiated befor main app.

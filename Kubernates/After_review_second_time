@@ -14,6 +14,8 @@
 83 - Admission Controllers
 86 - Validating and Mutating controllers
 91 - Monitor cluster components
+103 - Command and argments in Docker
+104 - Command and argments in Kubernates
 
         Practice till perfect:
 
@@ -21,3 +23,6 @@
 79 - multiple schedulers
 87 Validating and Mutation Admission Controllers
 92 Monotoring cluster components
+100 Rolling update
+112 Secrets
+120 Muliti container pods (Access logs inside pod at the end)

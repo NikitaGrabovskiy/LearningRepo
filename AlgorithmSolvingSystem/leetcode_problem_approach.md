@@ -10,7 +10,7 @@ It works both for **learning** and **technical interviews**.
 Do **not** code immediately.
 
 - Read the problem carefully
-- Restate it in your own words
+- RESTATE THE PROBLEM IN YOUR WORDS IN ENGLISH ALOUD ! NEVER SKIP THIS STEP, IMPORTANT FOR SOFT SKILL PRACTICE !
 - Identify:
   - Inputs
   - Outputs
@@ -73,8 +73,6 @@ Before thinking about code, ask these questions **in order**:
 - Are there **overlapping subproblems** with an **optimal substructure**?
   → Dynamic Programming
 
-- Is this problem focused on **binary representation or bit tricks**?
-  → Bit Manipulation
 
 📌 If you **cannot confidently map the problem to a pattern**, stop and analyze more.
 Most mistakes happen at this step.
@@ -117,6 +115,8 @@ Before coding, you must be able to say:
 > I will iterate once, store needed information, and return the result when a condition is met.
 
 If you can’t explain it simply, you don’t understand it yet.
+
+NEVER SKIP THE STEP - EXPLAIN THE SOLUTION ALOUD ! IMPORTANT FOR SOFTSKILLS
 
 ---
 

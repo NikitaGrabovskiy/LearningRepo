@@ -18,7 +18,7 @@ Bold, surrounded by ** ** - mean noted
 11) **Java 9, Java 14, 21 features**
 12) **How HashMap works internally**
 13) **What is autoboxing and unboxing?**
-14) What are the default values for primitive data types in Java? Their sizes
+14)
 15) **What is the difference between composition and inheritance?** 
 16) **What is the purpose of the super keyword? How can you use it**
 17) How do you create a thread in Java?

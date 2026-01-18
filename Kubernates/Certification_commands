@@ -262,11 +262,41 @@ kubectl rollout status <DEPLOYMENT NAME>
 kubectl rollout history <DEPLOYMENT NAME>
 
 
+                        ***
+
+To get any resource as yaml
+
+            kubectl get deployment <DEPLOYMENT NAME> -o yaml
+
+                        ***
+                        Update image in deployment
+
+kubectl set image deploy <Deployment name> <Container_name>=<new Image name>
 
 
+                        ***
+Command to create a config map
+
+kubectl create configmap app-config \
+  --from-literal=APP_NAME=payment-service \
+  --from-literal=APP_ENV=dev
+
+                        ***
+
+                Most important command !!! Open file inside pod :
+
+               If pod has sh:
+
+kubectl exec -it <POD_NAME> -- <COMMAND>
+
+        Example:
+
+kubectl exec -it app -n=elastic-stack -- cat /log/app.log
 
 
+To open container and run several commands :
 
+kubectl exec -it app -n=elastic-stack -- sh
 
-
-
+    If Bash installed
+kubectl exec -it app -n=elastic-stack -- bash
