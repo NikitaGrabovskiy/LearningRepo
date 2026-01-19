@@ -5,8 +5,8 @@ Bold, surrounded by ** ** - mean noted
 
 ** - mean already noted
 
-1) 
-2) 
+1) What collections are sorted in Java ? 
+2) How to create a custom exception ? 
 3) **What are methods of Object class in Java ? (11 methods)**
 4) **What is polimorphyzm**
 5) Stack vs Heap memory (Read note and compare to Chat gpt (Make more appropiate answer))

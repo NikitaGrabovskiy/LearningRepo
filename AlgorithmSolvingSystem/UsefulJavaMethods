@@ -16,3 +16,12 @@ String has it as function:
 
             *** Convert to a String array ***
         String[] array = collection.toArray(new String[collection.size()]);
+
+
+            *** Cool map method ***
+
+map.getOrDefault(key, defaultValue)
+
+👉 Meaning:
+If key exists in the map → return its value
+If key does NOT exist → return defaultValue (without adding it to the map)

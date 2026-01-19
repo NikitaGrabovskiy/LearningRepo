@@ -14,8 +14,50 @@
             Sliding window with monotonic deque
             Sliding window with at-most / at-least constraint
 
+            📝 Sliding Window Note (Why +1)
+                The window is inclusive: s[left ... right]
+
+                Number of elements in an inclusive range is:
+
+                    right - left + 1
+
+                Without +1, you under-count the window size
+
+                Under-counting allows invalid windows and gives wrong answers
+
+                Always use:
+
+                    windowSize = right - left + 1;
+
+                Rule to remember:
+
+                 Inclusive indices → always add +1
+
 4️⃣ Stack / Monotonic Stack
 5️⃣ Binary Search
+
+            Find , or return index where is supposed to be :
+
+            class Solution {
+                public int searchInsert(int[] nums, int target) {
+                    int left = 0, right = nums.length - 1;
+
+                    while (left <= right) {
+                        int mid = left + (right - left) / 2;
+
+                        if (nums[mid] == target) {
+                            return mid;
+                        } else if (nums[mid] < target) {
+                            left = mid + 1;
+                        } else {
+                            right = mid - 1;
+                        }
+                    }
+
+                    return left;
+                }
+            }
+
 6️⃣ Linked List
 7️⃣ Trees – DFS / BFS
             DFS (Depth-First Search)

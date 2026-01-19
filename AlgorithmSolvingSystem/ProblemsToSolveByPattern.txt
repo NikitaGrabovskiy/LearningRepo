@@ -40,7 +40,7 @@ DONE #167 – Two Sum II – Input Array Is Sorted
 
 DONE #3 – Longest Substring Without Repeating Characters
 
-#424 – Longest Repeating Character Replacement
+DONE #424 – Longest Repeating Character Replacement
 
 #209 – Minimum Size Subarray Sum
 
@@ -56,7 +56,7 @@ DONE #3 – Longest Substring Without Repeating Characters
 
 DONE #20 – Valid Parentheses
 
-#155 – Min Stack
+DONE #155 – Min Stack
 
 #739 – Daily Temperatures
 
@@ -72,7 +72,7 @@ DONE #20 – Valid Parentheses
 
 DONE #704 – Binary Search
 
-#35 – Search Insert Position
+DONE #35 – Search Insert Position
 
 #33 – Search in Rotated Sorted Array
 
@@ -88,7 +88,7 @@ DONE #704 – Binary Search
 
 DONE #206 – Reverse Linked List
 
-#21 – Merge Two Sorted Lists
+DONE #21 – Merge Two Sorted Lists
 
 #141 – Linked List Cycle
 
