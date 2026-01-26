@@ -853,3 +853,38 @@ spec:
 
 Side car will start first, the main app will wait till it started and starts only after that.
 Side car will be stopped after the main container stopped. Good example - logs app - needs to be intitiated befor main app.
+
+                                        Difference between controller and replicaSet
+
+Deployment is a higher-level controller that manages ReplicaSets and provides rolling updates, rollbacks, and versioning.
+ReplicaSet is a low-level controller that only ensures a fixed number of Pods are running.
+
+👉 You usually create Deployments, not ReplicaSets.
+
+
+                            *** NOTE ***
+
+If you try to drain a node and it has a node not mananged by replicaSet or deployment - you will get an error
+because you it will not be replicated on other nodes
+
+
+                            SECURITY (Most complex, needs more focus) Прогнать всю секцию 2 раза !!!
+
+You cannot create users directly in kubernates, or view a list of users, but you can create service accounts:
+
+    kubectl create serviceaccount sa1
+
+
+PKI - public key infrastructure - the whole layer of all the certificates and keys
+
+    Naming convention:
+
+Certificate, public key  named :       *.crt       or       *,.pem
+
+Private key ;                          *.key       or       *-.key.pem
+
+
+
+
+
+

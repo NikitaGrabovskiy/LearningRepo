@@ -300,3 +300,20 @@ kubectl exec -it app -n=elastic-stack -- sh
 
     If Bash installed
 kubectl exec -it app -n=elastic-stack -- bash
+
+                        *** Kubectl ***
+
+                        Remove all pods and cordon :
+
+kubeclt drain <Node_Name>        (--ignore-daemonsets    - in case of error)
+
+
+                        Uncordon node:
+kubectl uncordon <Node_Name>
+
+                            *** Note ***
+
+You can ssh to a node just do:
+
+   ssh <NODE_NAME>
+

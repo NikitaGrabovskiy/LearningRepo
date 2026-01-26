@@ -16,6 +16,15 @@
 91 - Monitor cluster components
 103 - Command and argments in Docker
 104 - Command and argments in Kubernates
+130 - In place resize of pods
+131 - VPA
+141 - Cluster update instruction
+145 - Backup and restore methods
+
+THE WHOLE SECURITY SECTION NEEDS TO BE REVIEWED AND ALL THE LABS NEEDS TO BE DONE AGAIN
+
+
+
 
         Practice till perfect:
 
@@ -26,3 +35,6 @@
 100 Rolling update
 112 Secrets
 120 Muliti container pods (Access logs inside pod at the end)
+132 Install VPA
+143 Cluster update !!!
+145 Backup and restore methods

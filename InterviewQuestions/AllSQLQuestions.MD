@@ -2,4 +2,5 @@
 2) Write a query to get the second highest salary from an employees table.
 3) How do you find duplicate records in a table?
 4) What does the DISTINCT keyword do? How is it different from GROUP BY?
-5) What are indexes? How do they improve query performance?
+5) **What are indexes? How do they improve query performance?**
+6) what types of Indexes exists

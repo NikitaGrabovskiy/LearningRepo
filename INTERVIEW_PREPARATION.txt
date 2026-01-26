@@ -1,0 +1,29 @@
+
+			Monday - Friday 1 hour before work, very strict, wake up early
+
+Monday 		Job search
+Tuesday 	AWS Developer certification (Do all practices)	
+Wednesday	Kubernates 1 hour
+Thursday 	write note 40 min / 20 read notes
+Friday 		Algorithms practice
+
+Saturday 		5 hour kubernates
+
+Sunday       	12 hours marathon:
+
+			1,5 hour practice aloud (1 hour notes, 30 min open questions from the fixed list)
+			(Important 1,5 hours, for interview and year goal)
+
+			1 hour min prepare for java/spring boot certifications
+			1 hour practice Java, follow documented practice steps (Complex things), 
+			1 hour angular - 30 min read notes/30 min write notes (Only questions preparation no practice, they always ask if I know)
+			
+
+
+spring boot (TO Stay in tonus)
+
+
+
+
+
+

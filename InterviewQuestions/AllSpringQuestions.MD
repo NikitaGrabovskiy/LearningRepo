@@ -3,8 +3,26 @@
 3) How do you enable role based access in Spring
 4) What is default implementation of spring security ? is it a role based or token
 5) **How do you protect Endpoint using JWT token ?**
-6) Difference between Constructor dependency injection and field injection and Setter injection
-7) What parameters of @Transactionals annotation do you know ?
+6) Difference between inversion of control and dependency injection
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            Review and check if needed - select the best
+
+21) What parameters of @Transactionals annotation do you know ?
 8) Spring Batch. How do you use it ? (Steps, what classes)
 9) How does Spring Boot perform component scanning?
 10) **How do you disable auto-configuration for a specific class?
@@ -77,7 +95,3 @@
 
 
 
-
-
-Spring certification pass:Ts19@8626
-Email - artist1

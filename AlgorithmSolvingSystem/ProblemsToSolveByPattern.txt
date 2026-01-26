@@ -104,7 +104,7 @@ DONE #21 – Merge Two Sorted Lists
 
 DONE #104 – Maximum Depth of Binary Tree
 
-#226 – Invert Binary Tree
+DONE #226 – Invert Binary Tree
 
 #543 – Diameter of Binary Tree
 
@@ -126,7 +126,7 @@ DONE #104 – Maximum Depth of Binary Tree
 
 DONE #78 – Subsets
 
-#90 – Subsets II
+REVIEW SOLUTION IN THE FILE #90 – Subsets II
 
 #46 – Permutations
 
@@ -140,7 +140,7 @@ DONE #78 – Subsets
 
 DONE #215 – Kth Largest Element in an Array
 
-#347 – Top K Frequent Elements
+DONE #347 – Top K Frequent Elements
 
 #295 – Find Median from Data Stream
 
@@ -152,9 +152,9 @@ DONE #215 – Kth Largest Element in an Array
 
 🔟 Intervals (5)
 
-#56 – Merge Intervals
+DONE #56 – Merge Intervals
 
-#57 – Insert Interval
+DONE #57 – Insert Interval
 
 #435 – Non-overlapping Intervals
 
