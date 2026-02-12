@@ -1,7 +1,8 @@
         After review second time:
 
+        * Carefully read all the notes
         1. Review the videos
-        2. Master all the selected labs (Do many times if needed)
+        2. Master all the selected labs (Do as many times if needed)
 
 
 
@@ -21,10 +22,12 @@
 141 - Cluster update instruction
 145 - Backup and restore methods
 
-THE WHOLE SECURITY SECTION NEEDS TO BE REVIEWED AND ALL THE LABS NEEDS TO BE DONE AGAIN
+THE SECURITY SECTION Till 177 NEEDS TO BE REVIEWED AND ALL THE LABS NEEDS TO BE DONE AGAIN,
+Make notes for the section.
 
-
-
+189 - Developing Network Policies
+199 - Storage in Docker
+200 to 201
 
         Practice till perfect:
 

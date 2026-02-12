@@ -884,7 +884,209 @@ Certificate, public key  named :       *.crt       or       *,.pem
 Private key ;                          *.key       or       *-.key.pem
 
 
+                            Location to see certificates for
+                            kube-api server:
+
+     /etc/kubernetes/manifests/kube-apiserver.yaml
+     (LEARN BY HEART)
 
 
+                                    Service Account
+
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: sample-token-sa
+  namespace: default
+
+        Use the service account in pod (If not specified - default will be used):
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: token-demo-pod
+spec:
+  serviceAccountName: sample-token-sa
+  containers:
+  - name: app
+    image: busybox
+    command: ["sh", "-c", "sleep 3600"]
+
+        You can create a token that can be used by third-party applications
+
+kubectl create token <Service account name assosiated with the token>
+
+
+Note:
+    Every name space has a default service account, it will be automatically attach to each pod on creation
+
+
+                                    Pull image from private registry
+
+1) Create secrets
+
+kubectl create secret docker-registry regcred \
+  --docker-server=https://index.docker.io/v1/ \
+  --docker-username=YOUR_USERNAME \
+  --docker-password=YOUR_PASSWORD \
+  --docker-email=YOUR_EMAIL
+
+2) Use the secrets
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: private-image-pod
+spec:
+  containers:
+  - name: app
+    image: your-username/your-private-image:latest
+    imagePullPolicy: Always
+  imagePullSecrets:
+  - name: regcred
+
+
+                                    Security context
+
+
+        This example demonstrates:
+
+* Running as a non-root user
+* Setting file system group
+* Making the container read-only
+* Dropping Linux capabilities
+* Preventing privilege escalation
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: secure-nginx
+spec:
+  securityContext:
+    runAsUser: 1000
+    runAsGroup: 3000
+    fsGroup: 2000
+  containers:
+  - name: nginx
+    image: nginx:1.25
+    ports:
+    - containerPort: 80
+    securityContext:
+      runAsNonRoot: true
+      readOnlyRootFilesystem: true
+      allowPrivilegeEscalation: false
+      capabilities:
+        drop:
+          - ALL
+
+                  You can put a security context on a higher level too (Not just for single container):
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: multi-pod
+spec:
+  securityContext:
+    runAsUser: 1001
+  containers:
+  -  image: ubuntu
+     name: web
+     command: ["sleep", "5000"]
+     securityContext:
+      runAsUser: 1002
+
+  -  image: ubuntu
+     name: sidecar
+     command: ["sleep", "5000"]
+
+
+
+                                Network policies
+
+
+
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-frontend-to-backend
+  namespace: default
+spec:
+  podSelector:
+    matchLabels:
+      app: backend   # apply policy to backend pods
+  policyTypes:
+  - Ingress
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: frontend   # only frontend pods allowed
+    ports:
+    - protocol: TCP
+      port: 8080
+
+
+                                  Create a custom resource
+
+First you need to create crd:
+
+
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: databases.mycompany.com
+spec:
+  group: mycompany.com
+  scope: Namespaced
+  names:
+    plural: databases
+    singular: database
+    kind: Database
+    shortNames:
+      - db
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              required:
+                - engine
+                - version
+                - storage
+              properties:
+                engine:
+                  type: string
+                version:
+                  type: string
+                storage:
+                  type: string
+
+
+Note: the CRD can be namespaced or not - the object can belong to namespace or not
+
+
+When run a command :
+
+kubectl apply -f crd.yaml
+
+When create a resource:
+
+apiVersion: mycompany.com/v1
+kind: Database
+metadata:
+  name: my-postgres-db
+spec:
+  engine: postgres
+  version: "15"
+  storage: "20Gi"
+
+
+Note: You need a controller to perform any action for resource creation, overvise -> the resource will be
+created but it not gonna do anything
 
 

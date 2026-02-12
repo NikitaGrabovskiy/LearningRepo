@@ -5,7 +5,7 @@ Bold, surrounded by ** ** - mean noted
 
 ** - mean already noted
 
-1) What collections are sorted in Java ? 
+1) **What collections are sorted in Java ?**
 2) How to create a custom exception ? 
 3) **What are methods of Object class in Java ? (11 methods)**
 4) **What is polimorphyzm**
@@ -21,14 +21,14 @@ Bold, surrounded by ** ** - mean noted
 14)
 15) **What is the difference between composition and inheritance?** 
 16) **What is the purpose of the super keyword? How can you use it**
-17) How do you create a thread in Java?
+17) 
 18) **What is the difference between Runnable and Callable?**
 19) What are thread-safe collections in Java?
 20) What are some ways to prevent thread starvation and deadlock?
 21) **Explain the role of ExecutorService and thread pools**. 
-22) What is a Future and how is it used?
-23) difference between Future and CompletableFuture
-23) What is the difference between a JAR and a WAR?
+22) 
+23) **Difference between Future and CompletableFuture**
+23) **What is the difference between a JAR and a WAR?**
 24) **Can you make different access modifiers for methods in child classes?**
 25) **Can you change exception thrown by parent class in child class?**
 26) **Can class be static ? If yes why do we need it?**
@@ -36,7 +36,7 @@ Bold, surrounded by ** ** - mean noted
 28) Have you migrated to latest java version ? What challenges you faced ?
 29) **Difference between notify and notifyAll.**
 30) How java manage memory? (Both stack and heap)
-31) 3 principles of OOP (4 th also mention)
+31) 
 32) **How hash code related to equals?**
 33) Can you manually trigger a garbage collector?
 34) **Can interface be private, default or protected**

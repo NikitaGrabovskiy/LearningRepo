@@ -1,35 +1,20 @@
+
+
+
 1) **How do you create connections for several DBs in Spring** 
 2) **How do you connect spring data JPA to table with composite, composite lexi key**
 3) How do you enable role based access in Spring
 4) What is default implementation of spring security ? is it a role based or token
 5) **How do you protect Endpoint using JWT token ?**
-6) Difference between inversion of control and dependency injection
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                            Review and check if needed - select the best
-
-21) What parameters of @Transactionals annotation do you know ?
+6) Difference between inversion of control and dependency injection 
+7) What parameters of @Transactionals annotation do you know ?
 8) Spring Batch. How do you use it ? (Steps, what classes)
 9) How does Spring Boot perform component scanning?
-10) **How do you disable auto-configuration for a specific class?
+10) How do you disable auto-configuration for a specific class?
 11) What is Spring Boot DevTools?
-12) **How do you bind configuration properties to a POJO (@ConfigurationProperties)? 
-13) **Difference between @Value and @ConfigurationProperties?
-14) **What is the purpose of @Profile and how do you activate a profile?
+12) How do you bind configuration properties to a POJO (@ConfigurationProperties)? 
+13) Difference between @Value and @ConfigurationProperties?
+14) What is the purpose of @Profile and how do you activate a profile?
 15) How do you create custom bean initialization or destroy methods?
 16) What is the purpose of @Lazy annotation?
 17) How do you define entity relationships? (OneToOne, OneToMany, ManyToMany)
