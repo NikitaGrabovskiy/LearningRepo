@@ -317,3 +317,43 @@ You can ssh to a node just do:
 
    ssh <NODE_NAME>
 
+
+                              ******   NETWORK  *******
+
+ip link         -   list and modify and modify interfaces on the host
+
+ip addr         -   list ip adresses assigned to the interfaces
+
+ip addr add 192.168.1.10/24        -   set ip adresses on the interfaces
+
+    Note - changes made with the command are only awailable till restart - to persist them permenantly you need to
+update :        /etc/sysctl.conf
+
+
+
+ip route (or simply "route") - use to see routes in the route table
+
+ip route add 192.168.1.10/24 via 183.168.1.10/24       - add to route table
+
+cat /proc/sys/net/ipv4/ip_forward           -  check if ip forwarding is configured on the host (If host
+ configured as a router)
+
+
+                                Network namespaces
+
+ip netns add <NAME>                 - to add network namespace
+
+ip netns                            - to list network namespaces
+
+ip link                             - to list interfaces on a host
+
+
+ip netns <NAME> ip link             - command to list interfaces will be executed inside namespace
+
+
+
+
+ip address show type bridge         - show all the interfaces of type bridge
+
+
+netstat -npl | grep -i <Program name>       - to find a port on which application is running

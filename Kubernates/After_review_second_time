@@ -28,6 +28,18 @@ Make notes for the section.
 189 - Developing Network Policies
 199 - Storage in Docker
 200 to 201
+210 - Storage class
+
+NETWORK SECTION - ALL
+
+
+
+
+
+
+
+
+
 
         Practice till perfect:
 
@@ -41,3 +53,5 @@ Make notes for the section.
 132 Install VPA
 143 Cluster update !!!
 145 Backup and restore methods
+206 Persistent volume claims
+212 Storage class

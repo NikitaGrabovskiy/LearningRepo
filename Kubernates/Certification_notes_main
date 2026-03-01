@@ -1090,3 +1090,61 @@ Note: You need a controller to perform any action for resource creation, overvis
 created but it not gonna do anything
 
 
+                                    Volumes
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: random-writer-pod
+spec:
+  containers:
+  - name: busybox
+    image: busybox
+    command: ["/bin/sh", "-c"]
+    args:
+      - |
+        RANDOM_NUMBER=$(shuf -i 1-1000 -n 1);
+        echo $RANDOM_NUMBER > /data/random.txt;
+        echo "Generated number: $RANDOM_NUMBER";
+        sleep 3600
+    volumeMounts:
+    - name: data-volume
+      mountPath: /data
+  volumes:
+  - name: data-volume
+    emptyDir: {}
+
+
+You need to specify :
+        volumes
+        and
+        volume mounts for the container
+
+
+                            Difference between Persistent volume and persistent volume claim
+
+PersistentVolume (PV)
+
+    A cluster-level storage resource (like a disk).
+    Created by admin or dynamically provisioned.
+    Represents actual storage (EBS, NFS, Azure Disk, etc.).
+
+PersistentVolumeClaim (PVC)
+    A request for storage made by a Pod/user.
+    Specifies size, access mode, and storage class.
+    Kubernetes binds it to a matching PV.
+
+👉 Simple idea:
+
+        PV = actual storage
+        PVC = request for storage
+
+    Pods use PVC, not PV directly.
+
+
+Note : PersistentVolumeClaim can find PersistentVolume automatically or you can specify A label and Selector
+
+You can specify :
+    persistentVolumeReclaimPolicy: Retain (Or delete or recycle)
+
+It will delete or retain PersistentVolume when PersistentVolumeClaim be deleted

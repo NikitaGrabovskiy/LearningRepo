@@ -6,8 +6,9 @@ Do it in batches by 28 (14, one of each category + 14).
 
                     1. Solve the 28 problems and save to text files (Do not save easy ones)
                     2. Code all of them again
-                    3. Print and repeat periodically
-                    4. Go to the next one
+                    3. List the ones that had to use chat gpt for and code them again after
+                    4. Print and repeat periodically, add description, solution and Big O at the end
+                    5. Go to the next 28 problems
 
 
                    Do it till I reach 300,
