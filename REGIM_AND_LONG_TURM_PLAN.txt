@@ -1,14 +1,52 @@
-
-    While in Phoenix:
-
-Only study Kubernates
-
-On weekend plus:
-    3 algorithms
-    1 hour Angular
+                                Пока в Финексе - только Кубернетес !!!
 
 
-AFTER Phoenix
+
+                                Режим после Финекса
+
+*** 1 час в неделю готовиться к интервью, кодирование и теория-
+
+        Have a plan - what to repeat in order :
+
+        - Java
+        _ Java certification
+        - Spring
+        - Spring certification
+        - SQL
+        - Повторять кубернетес (30 минут в месяц skad cert)
+        - AWS Developer - > Devops -> architect professional cert
+
+
+*** 1 час практика алгоритмов
+
+*** 30 минут в день писать - написать две книги - САМОЕ ГЛАВНОЕ
+        Опубликовать их самому
+
+*** Готовиться к сертификации все оставщееся время - 1 за раз, только стратегические
+(нет времени на ненужные - только стратегия на будущее)
+
+        Kubernates
+        AI Nvidea
+        (Если Azure on project - Azure architect assosiate certification)
+        Project plus
+        ML with AWS
+
+                                Цель на год
+
+1) Найти работу на 170 - 200 тысяч
+2) Опубликовать 3 книги самому:
+
+        Мерцающие огни
+        Профессии будущего (3 истории на Английском писать)
+        Сироты
+
+   3 книги опубликовать на русском и английском
+
+
+
+
+
+AFTER Phoenix Важно
 
 
             When return home:
@@ -21,46 +59,9 @@ AFTER Phoenix
             2) Упор на каммуникацию и лидерство на новой работе.
             Самое главное! Сделать отдельный пункт! Начать сразу!
 
+            3) Рисовать диаграмму проекта на бумаге. Понимать архитектуру.
+
 
             Also:
             * Копить деньги что бы быть готовым
-            * Go with Ksusha to labrary, for her immune system
-
-
-            *** PLAN For a year***
-
-GOAL - get a job for 170 - 200 a year and finish 2 books: Siroti and Sbornik Chat-kgb.
-
-
-
-
-First - complete kubernates certification, After do prepare for a new Job:
-
-    1) Get strategic certifications (All the time)
-
-            NVIDIA-Certified Associate Generative AI LLMs (NCA-GENL)
-            Azure fundamentals ?
-            AWS Machine Learning
-            Project+
-
-    2) Study tone subjects, prepare for tone certifications
-
-
-                        30 min a week podcast or interview on IT
-
-                        1 hour a week one o the topics:
-            Spring boot certification,
-            Java 21 certification
-            write notes/read notes aloud, and practice answering
-            Kubernates SKAD
-            Practice java and SpringBoot
-
-                        1 hour a week for each
-            AWS -> Developer -> OPS -> Architect Professional
-            Leetcode & Algorithms and Data Structures book
-
-    3) Pisat knigi 2 chasa v nedelu
-
-    4) Next book posle Taras Bulba - Project plus cert preparation - read it at free time
-
-           *** TODO: REGIM ***
+            * Отдать Ксюшу в садик

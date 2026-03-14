@@ -220,7 +220,7 @@ DONE #133 – Clone Graph
 
 DONE 547 – Number of Provinces
 
-684 – Redundant Connection
+DONE 684 – Redundant Connection
 
 721 – Accounts Merge
 

@@ -1,18 +1,78 @@
-        After review second time:
 
-        * Carefully read all the notes
-        1. Review the videos
-        2. Master all the selected labs (Do as many times if needed)
+                   NEXT STEP  ONLY PRACTICE, EVEN IN THE MORNINGS ONLY PRACTICE TILL COMPLETE EVERYTHING ONCE:
 
-
+ Step 1 :
+        Complete the 3 exam demos - try myself - if can't watch video
 
 
-        Review video:
+        Done 8 questions in 3rd exam
 
-66 - resource limits,
-73 - static pods
-78 - multiple schedulers
-83 - Admission Controllers
+
+ Step 2 :
+        Practice all the labs again,
+        note the ones that I can't do and practice the ones that I can't till perfect
+
+79 - multiple schedulers
+87 Validating and Mutation Admission Controllers
+92 Monotoring cluster components
+100 Rolling update
+112 Secrets
+120 Muliti container pods (Access logs inside pod at the end)
+132 Install VPA
+143 Cluster update !!!
+145 Backup and restore methods
+206 Persistent volume claims
+212 Storage class
+263 - Installing helm
+All kustomize labs
+Kubeadm install
+All troubleshooting
+All other topics section
+Last section Latning tab
+
+Step 3:
+    Practice the exam again, note the ones that I can't do and practice the ones that I can't till perfect
+
+
+Step 4:
+    Practice codekloud
+
+All the exams from code cloud
+
+                Link to practice exams:
+
+                PROMO: UDEMY10
+                https://learn.kodekloud.com/user/courses/ultimate-certified-kubernetes-administrator-cka-mock-exam-series
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    THEORY VIDEOS
+
+
+
+                    Watch videos after practice if needed (ONLY after all the practice done once):
+
+        Review video before work:
+
+X - mean watched 1 time
+
+X 67 - resource limits
+X 74 Static pods
+X 78 - multiple schedulers
+X 84 - Admission Controllers
 86 - Validating and Mutating controllers
 91 - Monitor cluster components
 103 - Command and argments in Docker
@@ -29,29 +89,9 @@ Make notes for the section.
 199 - Storage in Docker
 200 to 201
 210 - Storage class
-
 NETWORK SECTION - ALL
-
-
-
-
-
-
-
-
-
-
-        Practice till perfect:
-
-75 - static pods lab
-79 - multiple schedulers
-87 Validating and Mutation Admission Controllers
-92 Monotoring cluster components
-100 Rolling update
-112 Secrets
-120 Muliti container pods (Access logs inside pod at the end)
-132 Install VPA
-143 Cluster update !!!
-145 Backup and restore methods
-206 Persistent volume claims
-212 Storage class
+262 install helm
+265 helm components
+266 helm charts
+278 Managing directories
+All other topics section

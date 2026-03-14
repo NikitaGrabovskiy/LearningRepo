@@ -1,0 +1,72 @@
+                    Questions:
+            ***
+Role vs ClusterRole
+
+            ***
+
+What is priority class ?
+
+
+
+
+
+
+
+
+
+                    ****** List of things that cause issue in practice ******
+
+                    ***
+k config set-context --current --namespace=<NAME_SPACE_NAME>
+
+                    ***
+
+if pod has "-controlplane" at the end of the name - it mean that it is a a static pod
+
+                    ***
+
+To check kubelet status on a node :
+1) ssh to node
+2) Run :
+
+        service kubelet status
+
+3) If it in inactive state run :
+
+        service kubelet start
+
+
+Command to see node logs:
+
+     journalctl -u kubelet
+
+Note, kubelet configs are located in :
+
+    /etc/kubernates/kubelet.config
+
+kubelet files located at:
+
+    /var/lib/kubelet/
+
+After update in kubelet files run:
+
+    service kubelet restart
+
+port to connect node to control plane should be :
+
+    6443
+
+
+                        ****
+
+to create a service from pod use the command :
+
+kubectl expose pod <POD NAME> --port=6379 --name=<SERVICE NAME>
+
+(By default the service will be created as "ClusterIp", will be accessible only inside the cluster)
+
+    You can do the same for deployment:
+
+kubectl expose deployment <POD NAME> --port=6379 --name=<SERVICE NAME> --type=NodePort
+
+    (Node port type is accessible outside the cluster)

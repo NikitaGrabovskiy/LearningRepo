@@ -357,3 +357,83 @@ ip address show type bridge         - show all the interfaces of type bridge
 
 
 netstat -npl | grep -i <Program name>       - to find a port on which application is running
+
+
+                                HELM commands
+
+helm --help
+
+helm install <chart name ex 'wordpress'>
+
+helm install <RELEASE_NAME> <chart name ex 'wordpress'>         - install with release name
+
+helm upgraded <Image name>
+
+helm rollback <Image name>           - rollback to previous revision
+
+helm uninstall <Image name>
+
+                        to get more specilzed info
+helm repo --help
+
+helm repo update --help
+
+
+helm search <Chart name>
+
+helm search hub <Chart name>
+
+                                        add and install repo
+helm add repo bitnamy http/<repo>
+helm install <release name> bitnamy
+
+
+helm list
+
+
+                                        customize parameters
+
+helm install -set wordpressBlogName="test name" my_release bitnami/wordpress
+
+            You can set as many parameters as needed
+
+you can put values into a yaml file for example custom.yaml
+
+
+helm install --values custom values.yaml  my_release bitnami/wordpress
+
+
+                                To upgrade
+
+helm upgrade <release name> <Chart name>
+
+helm history <Release name>         to see history of revisions
+
+helm rollback <Release name> <release version ex, 1>
+
+                              Kastomize
+
+To install:
+
+kastomize install k8s/ | kubectl apply -f -
+
+        to delete:
+
+kastomize install k8s/ | kubectl delete -f
+
+        Another way to do that is
+
+kubectl apply -k k8s/
+
+
+Memorize:
+************
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- deployment.yaml
+
+************
+
+
