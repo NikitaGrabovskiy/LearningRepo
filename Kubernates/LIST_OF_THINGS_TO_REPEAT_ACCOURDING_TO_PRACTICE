@@ -2,9 +2,83 @@
             ***
 Role vs ClusterRole
 
+Role grants permissions within a specific namespace,
+while ClusterRole grants permissions across the entire cluster or for cluster-level resources.
+
             ***
 
 What is priority class ?
+
+PriorityClass in Kubernetes defines the priority of pods,
+so when the cluster lacks resources, higher-priority pods run first and can preempt (evict) lower-priority pods.
+
+            ***
+
+What .kubeconfig files used for ?
+
+
+
+ß
+            ***
+
+CNI plugin
+
+
+            ***
+
+What is Gateway
+
+            ***
+
+HTTP route example and what is that ?
+
+
+            ***
+
+What is kube-controller-manager?
+
+
+            ***
+
+            What is kube proxy ?
+
+kube-proxy is a Kubernetes network component that routes traffic to the correct Pods behind a Service.
+👉 In one sentence:
+It maintains network rules on each node so Services can load-balance traffic to Pods.
+
+            ***
+
+What is rolling deployment
+
+            ***
+
+CRD (Custom Resource Definition) in Kubernetes lets you extend Kubernetes with your own resource types.
+
+A CRD allows you to create your own Kubernetes objects (like Pods, Services) but customized for your application.
+
+            ***
+
+        Difference between port and target port in service:
+
+Difference:
+
+port → the port exposed by the Service (clients use this)
+targetPort → the port on the Pod/container (where your app listens)
+
+🔹 Example
+ports:
+  - port: 80
+    targetPort: 8080
+
+👉 Request flow:
+Client → Service:80 → Pod:8080
+
+🔹 Key idea
+
+Service acts as a middle layer:
+it receives traffic on port and forwards it to targetPort on Pods.
+
+
 
 
 
@@ -70,3 +144,61 @@ kubectl expose pod <POD NAME> --port=6379 --name=<SERVICE NAME>
 kubectl expose deployment <POD NAME> --port=6379 --name=<SERVICE NAME> --type=NodePort
 
     (Node port type is accessible outside the cluster)
+
+
+                        ****
+
+Learn by heart to run command inside container:
+
+kubectl exec -it <pod-name> -- cat /path/to/log/file.log
+
+                        ****
+                 TO VIEW CONFIGS :
+kubectl config view
+
+                        ****
+
+                        nodeAffinity? What is that in VolumeClaims
+
+
+nodeAffinity in PV = forces Pod to run where the storage is
+
+                        ****
+
+Difference between controller and scheduler
+
+Controller
+What it does: Ensures the desired state is maintained
+Watches cluster state and fixes differences
+Example: If a Pod dies → controller creates a new one
+
+👉 Think: “Keep things running as defined”
+
+Scheduler
+What it does: Decides where a Pod runs
+Assigns Pods to specific nodes based on resources, rules, constraints
+
+👉 Think: “Pick the best node”
+
+One-line difference
+Controller = maintains state
+Scheduler = assigns placement
+
+                        ****
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,35 +1,67 @@
+
+1) Faang.me - first thing! Do it - focus on finding a new job FOR SURE ! MOST IMPORTANT !
+
+
+
+
+
+                        Finalize everything - before going
+
+                        Make list of things !!!!!!!
+
+
+                        Very very important
+
+
+
+
+
+
+
+
+
+
+
+
                                 Пока в Финексе - только Кубернетес !!!
 
 
 
                                 Режим после Финекса
 
-*** 1 час в неделю готовиться к интервью, кодирование и теория-
+Пока не найду работу на 170-200, прям засекать - 2 часа то, следуующие 2 часа это:
 
-        Have a plan - what to repeat in order :
+    1) Половину всего времени готовлюсь к интерьвью (Сделать программу):
 
-        - Java
-        _ Java certification
-        - Spring
-        - Spring certification
-        - SQL
-        - Повторять кубернетес (30 минут в месяц skad cert)
-        - AWS Developer - > Devops -> architect professional cert
+                Половину Leedcode
+                Остальное время:
+                    Java
+                    Spring boot
+                    AWS (OR AZURE)
+                    Repeat kubernates
+
+    2) Вторую только сертификации и курсы по IA and LLM - единственная стратегическая технология:
+
+                    1) Nvidea MML
+                    2) ML with AWS (Or azure)
+                    3) Nvidea Agentic AI
+                    4) Google professional certificate
+
+30 минут в день писать или рабоать над романами
+
+                Когда найду работу на 170-200
+1) Упор бизнес
+2) Изучение AI
 
 
-*** 1 час практика алгоритмов
 
-*** 30 минут в день писать - написать две книги - САМОЕ ГЛАВНОЕ
-        Опубликовать их самому
 
-*** Готовиться к сертификации все оставщееся время - 1 за раз, только стратегические
-(нет времени на ненужные - только стратегия на будущее)
 
-        Kubernates
-        AI Nvidea
-        (Если Azure on project - Azure architect assosiate certification)
-        Project plus
-        ML with AWS
+
+
+
+
+
 
                                 Цель на год
 
@@ -46,7 +78,13 @@
 
 
 
-AFTER Phoenix Важно
+
+
+
+
+
+
+                            AFTER Phoenix Важно
 
 
             When return home:
@@ -55,6 +93,8 @@ AFTER Phoenix Важно
 
             1) Самое главное! Не ругаться, если накаляеться просто молчать и не реагировать пока не пойдет
             даже если несколько дней. На это упор, всегда держать в голове. Никогда не расалабляться.
+            Просто молчать 2 часа если что, потом 2X
+
 
             2) Упор на каммуникацию и лидерство на новой работе.
             Самое главное! Сделать отдельный пункт! Начать сразу!
@@ -63,5 +103,5 @@ AFTER Phoenix Важно
 
 
             Also:
-            * Копить деньги что бы быть готовым
+            * Копить деньги что бы была подушка в случае чего
             * Отдать Ксюшу в садик

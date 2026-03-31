@@ -1,37 +1,250 @@
 
-                   NEXT STEP  ONLY PRACTICE, EVEN IN THE MORNINGS ONLY PRACTICE TILL COMPLETE EVERYTHING ONCE:
+                         Strategy
 
- Step 1 :
-        Complete the 3 exam demos - try myself - if can't watch video
+🧠 Strategy (simple and effective)
+First pass (45–60 min):
+Do all easy questions
+Skip anything unclear or long
+Second pass:
+Medium difficulty (RBAC, probes, volumes)
+Last pass:
+Hard stuff (etcd, debugging, networking)
+⚠️ Key rule
+
+👉 Don’t get stuck >5 minutes on ANY question
+
+Even if you're close — skip it and return later.
 
 
-        Done 8 questions in 3rd exam
 
 
- Step 2 :
-        Practice all the labs again,
-        note the ones that I can't do and practice the ones that I can't till perfect
 
-79 - multiple schedulers
-87 Validating and Mutation Admission Controllers
-92 Monotoring cluster components
-100 Rolling update
-112 Secrets
-120 Muliti container pods (Access logs inside pod at the end)
-132 Install VPA
-143 Cluster update !!!
-145 Backup and restore methods
-206 Persistent volume claims
-212 Storage class
-263 - Installing helm
-All kustomize labs
-Kubeadm install
+
+
+
+
+****************************************************************************************************************************************************************
+
+                                   PRACTICE TILL PERFECT, Only after continue code cloud exams
+
+*********************************!!!PRACTICE TILL PERFECT!!!***************************************************************************************************
+
+                                    ***
+                                Run command:
+
+kubectl exec -it <pod-name> -- sh ls
+(run commands in pod)
+
+                                            ***
+    LAB 259 Deploy a Kubernates cluster - just follow the video instructions
+
+                                            ***
+                                         Mock exam 1
+
+Question 2 (I had to remember the commands, Do not practice it now. Ask chatgpt )
+
+            ssh <USER>@node01
+            sudo su
+
+            dpkg -i ./cri-docker_0.3.16.3-0.debian.deb
+
+            systemctl start cri-docker
+
+            systemctl status
+
+            systemctl enable cri-docker
+
+            systemctl is-enabled cri-docker
+
+Question 3
+Question 7
+            Before : kubectl create deployment hr-web-app --image=kodekloud/webapp-color --replicas=2
+Question 9
+Question 10
+Question 12
+               helm list
+               helm repo list
+               helm repo update
+               helm search repo nginx --versions | grep 18.1.5
+               helm upgrade <Release_version> <Chart_Name_get_from_previous_command> --version=<version> -n=<Namespace>
+               helm list to validate
+
+
+
+                                              ***
+                                           Mock exam 2
+
+Question 3
+Question 5
+
+        Important command - learn by heart - important:
+            cat /root/CKA/john.csr  | base64 | tr -d '\n'
+
+        NOTE - command can be found in the page :
+            Signing CSR with v1.CertificateSigningRequest
+
+
+        Other thing to remember :
+
+          usages:
+          - digital signature
+          - key encipherment
+          - client auth
+
+        kubectl certificate approve john-developer
+
+        kubectl auth can-i create pods --as=john -n=development
+
+Question 6
+
+        kubectl run text-nslookup --image=busybox:1.28 --rm -it --restart=Never -- nslookup nginx-resolver-service
+
+        kubectl run text-nslookup --image=busybox:1.28 --rm -it --restart=Never -- nslookup <ServiceIP Dash separated
+        172-17-1-11>.default.pod
+
+Question 10
+
+        helm get manifest <Release name>
+
+
+                                                  ***
+                                              Mock exam 3
+
+Question 1
+Question 6
+
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: ingress-to-nptest
+  namespace: default
+spec:
+  podSelector:
+    matchLabels:
+      run: np-test-1
+  policyTypes:
+  - Ingress
+  ingress:
+    - ports:
+      - protocol: TCP
+        port: 80
+
+Question 9
+        Command to check if kubeConfig works:
+
+        kubectl get node --kubeconfig=/root/CKA/super.kubeconfig
+
+Question 12
+Question 13
+
+             helm install webpage-server-02 /root/new-version
+
+Question 14
+
+                                        ***
+
+                             159 Lab - View certificate details
+                             (Very important good understanding for certificates)
+
+                                        ***
+
+                            155 Certificates API
+
+                                        ***
+
+                            159 KubeConfig
+
+                                        ***
+
+                            Practice viewing something as user
+
+                                        ***
+
+                            Codecloud Exam 1 :
+
+Question 5
+Question 8
+
+# 1. Test service DNS and save output
+kubectl run dns-test-svc --image=busybox:1.28 --restart=Never --rm -i \
+  -- nslookup nginx-resolver-service-cka06-svcn \
+  > /root/CKA/nginx.svc.cka06.svcn
+
+# 2. Get pod IP
+kubectl get pod nginx-resolver-cka06-svcn -o wide
+
+Copy the POD IP, then:
+
+# 3. Test pod DNS (via IP) and save output
+kubectl run dns-test-pod --image=busybox:1.28 --restart=Never --rm -i \
+  -- nslookup <POD-IP> \
+  > /root/CKA/nginx.pod.cka06.svcn
+
+Question 9
+
+                            Stopped at question 11
+
+
+
+
+
+
+
+
+
+************************************************************************************************************************************
+
+
+
+
+
+
+
+
+
+R - repeat for sure
+N - no need to repeat for now
+
+
+
+R X 88 Validating and Mutation Admission Controllers
+R X 93 Monotoring cluster components
+X R 145 Backup and restore methods (Problematic try agan later)
+
+             N X 79 - multiple schedulers
+             N X 100 Rolling update
+             N X 113 Secrets
+             N X 120 Muliti container pods (Access logs inside pod at the end)
+             N X 203 Persistent volume claims
+             N X 208 Storage class
+
+
+THE SECURITY SECTION All labs    166 Cluster roles
+
+
 All troubleshooting
 All other topics section
+All kustomize labs
 Last section Latning tab
+ALL NETWORK SECTION
+132 Install VPA
+All the helm labs - problematic (No videos)
+
+Kubeadm install
+All Cluster update section, including videos
+
+
+
+
+
+
+
+
+
 
 Step 3:
     Practice the exam again, note the ones that I can't do and practice the ones that I can't till perfect
+    Practice all the complex labs again - mark the ones that I can't do
 
 
 Step 4:
@@ -68,30 +281,39 @@ All the exams from code cloud
         Review video before work:
 
 X - mean watched 1 time
+N - no need to watch again for now
 
 X 67 - resource limits
 X 74 Static pods
 X 78 - multiple schedulers
 X 84 - Admission Controllers
-86 - Validating and Mutating controllers
-91 - Monitor cluster components
-103 - Command and argments in Docker
-104 - Command and argments in Kubernates
-130 - In place resize of pods
-131 - VPA
-141 - Cluster update instruction
-145 - Backup and restore methods
+X 87 - Validating and Mutating controllers
+X 92 - Monitor cluster components
+X 104 - Command and argments in Docker
+X 104 - Command and argments in Kubernates
+X 130 - In place resize of pods
+X 131 - VPA
+X 143 - Backup and restore methods
 
-THE SECURITY SECTION Till 177 NEEDS TO BE REVIEWED AND ALL THE LABS NEEDS TO BE DONE AGAIN,
-Make notes for the section.
+X THE SECURITY SECTION Till 169 NEEDS TO BE REVIEWED AND ALL THE LABS NEEDS TO BE DONE AGAIN
 
-189 - Developing Network Policies
-199 - Storage in Docker
-200 to 201
-210 - Storage class
-NETWORK SECTION - ALL
-262 install helm
-265 helm components
-266 helm charts
+R X 155 TLS in kubernates
+R X 163 KubeConfig
+R X 167 Api groups
+
+
+R X 186 - Developing Network Policies
+X 196 - Storage in Docker
+R X 207 - Storage class
+
+NETWORK SECTION - ALL (Skip till Cluster networking for now)
+
+R X 220 Cluster networking
+R X 224 Pod networking
+R X 232 Service Networking
+R X 236 core DNS in Kubernates
+R X 238 Introduction to API Gateway
+
+R X ALL HELM
+
 278 Managing directories
-All other topics section

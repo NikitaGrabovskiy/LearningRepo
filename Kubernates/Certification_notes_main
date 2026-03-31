@@ -1,3 +1,11 @@
+
+        STOPPED at Line 33
+
+
+
+
+
+
         ***
 Worker Node
 
@@ -12,7 +20,8 @@ Master Node has control plain components :
     1) Etcd
 
     Etcd is a distributed, consistent key-value store used by Kubernetes as its primary database.
-    It stores all the cluster’s state and metadata—such as nodes, Pods, ConfigMaps, Secrets, networking configurations, and more.
+    It stores all the cluster’s state and metadata—such as nodes, Pods, ConfigMaps, Secrets,
+    networking configurations, and more.
     Because etcd is highly available, fault-tolerant, and uses the Raft consensus algorithm,
     Kubernetes can reliably coordinate the entire cluster even if some nodes fail.
     In simple terms:
