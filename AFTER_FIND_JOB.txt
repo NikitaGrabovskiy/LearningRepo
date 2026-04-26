@@ -2,50 +2,48 @@
 1) Faang.me - first thing! Do it - focus on finding a new job FOR SURE ! MOST IMPORTANT !
 
 
-
-
-
                         Finalize everything - before going
 
                         Make list of things !!!!!!!
 
+                        Focus on styding one topic at a time
+First 4 month - 2 hours a day AI certification:
+1) Java certification - 4 weeks
+2) Spring boot certification - 2 weeks
+3) Practice algorithms:
+    Make list from easiest to hardest and practice one by one till perfect
 
-                        Very very important
+After that : Faang.me course
 
-
-
-
-
-
-
-
-
-
-
-
-                                Пока в Финексе - только Кубернетес !!!
+After 2 hours a week repeat and the rest certification
 
 
 
-                                Режим после Финекса
 
-Пока не найду работу на 170-200, прям засекать - 2 часа то, следуующие 2 часа это:
+                What to stydy on ai ?
 
-    1) Половину всего времени готовлюсь к интерьвью (Сделать программу):
+1) DeepLearning.AI LLM course
+2) AWS Generative AI Specialty
+3) Databricks Generative AI Engineer Associate
 
-                Половину Leedcode
-                Остальное время:
-                    Java
-                    Spring boot
-                    AWS (OR AZURE)
-                    Repeat kubernates
 
-    2) Вторую только сертификации и курсы по IA and LLM - единственная стратегическая технология:
 
-                    1) Nvidea MML
-                    2) ML with AWS (Or azure)
-                    3) Nvidea Agentic AI
-                    4) Google professional certificate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 30 минут в день писать или рабоать над романами
 

@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/LearningRepo.iml" filepath="$PROJECT_DIR$/LearningRepo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PRACTICE_TILL_PERFECT/PRACTICE_TILL_PERFECT.iml" filepath="$PROJECT_DIR$/PRACTICE_TILL_PERFECT/PRACTICE_TILL_PERFECT.iml" />
       <module fileurl="file://$PROJECT_DIR$/TO_PRINT/AlreadyPrintedDocuments/PrintedDocuments.iml" filepath="$PROJECT_DIR$/TO_PRINT/AlreadyPrintedDocuments/PrintedDocuments.iml" />
     </modules>
   </component>

@@ -1,0 +1,115 @@
+                                    Perfect solutions from ChatGPT
+
+                                            1 Two sum
+
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+
+        Map<Integer,Integer> map = new HashMap();
+
+        for(int i = 0; i < nums.length; i++){
+            if(map.containsKey(nums[i])){
+                return new int []{map.get(nums[i]),i};
+            } else {
+                map.put(target-nums[i],i);
+            }
+        }
+        return null;
+    }
+}
+
+                                        217. Contains Duplicate
+
+class Solution {
+    public boolean containsDuplicate(int[] nums) {
+        Set<Integer> set = new HashSet<>();
+        for (int num : nums) {
+            if (!set.add(num)) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
+
+                                        219. Contains Duplicate II
+
+class Solution {
+    public boolean containsNearbyDuplicate(int[] nums, int k) {
+
+        Map<Integer, Integer> map = new HashMap<>();
+
+        for (int i = 0; i < nums.length; i++) {
+            if (map.containsKey(nums[i]) && i - map.get(nums[i]) <= k) {
+                return true;
+            }
+            map.put(nums[i], i);
+        }
+
+        return false;
+    }
+}
+
+
+                                        242. Valid Anagram
+
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        if (s.length() != t.length()) return false;
+
+        Map<Character, Integer> map = new HashMap<>();
+
+        for (int i = 0; i < s.length(); i++) {
+            map.put(s.charAt(i), map.getOrDefault(s.charAt(i), 0) + 1);
+            map.put(t.charAt(i), map.getOrDefault(t.charAt(i), 0) - 1);
+        }
+
+        for (int count : map.values()) {
+            if (count != 0) return false;
+        }
+
+        return true;
+    }
+}
+
+                                        49. Group Anagrams
+
+class Solution {
+    public List<List<String>> groupAnagrams(String[] strs) {
+        Map<String, List<String>> map = new HashMap<>();
+
+        for (String word : strs) {
+            char[] chars = word.toCharArray();
+            Arrays.sort(chars);
+            String sortedWord = new String(chars);
+
+            map.computeIfAbsent(sortedWord, k -> new ArrayList<>()).add(word);
+        }
+
+        return new ArrayList<>(map.values());
+    }
+}
+
+                                    560. Subarray Sum Equals K
+
+class Solution {
+    public int subarraySum(int[] nums, int k) {
+        Map<Integer,Integer> map = new HashMap<>();
+        map.put(0, 1);
+
+        int count = 0;
+        int currentSum = 0;
+
+        for(int num: nums){
+
+            currentSum+=num;
+            if(map.containsKey(currentSum-k)){
+                count += map.get(currentSum-k);
+            }
+
+            map.put(currentSum, map.getOrDefault(currentSum,0)+1);
+        }
+
+        return count;
+    }
+}

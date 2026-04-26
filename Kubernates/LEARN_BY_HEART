@@ -1,0 +1,130 @@
+
+                            LEARN BY HEART
+
+
+                            COMMANDS :
+
+            ***
+
+cat /root/CKA/john.csr  | base64 | tr -d '\n'
+
+            ***
+
+kubectl certificate approve <CERTIFICATE SIGNING REQUEST NAME>
+
+            ***
+
+kubectl auth can-i create pods --as=<USER_NAME> -n=<NAMES_SPACE_NAME>
+
+            ***
+
+        To check if kubeconfig working:
+
+kubectl get node --kubeconfig=/root/CKA/super.kubeconfig
+
+        ***
+
+        To Validate chart
+ helm lint /root/new-version
+
+        ***
+        To call service from a different namespace
+Format
+curl <service-name>.<namespace>.svc.cluster.local:8080
+
+curl http://my-service.backend.svc.cluster.local:<port>
+
+(try curl http://my-service.backend:8080 - might work)
+
+
+
+
+            *** Update repos to the latest versions
+
+1 get image name from existing release from "helm list"
+2 find actual name <CHART_NAME>/<IMAGE> using "helm search repo"
+3 upgrade using:
+    helm upgrade RELEASE_NAME CHART_NAME/IMAGE --version=<VERSION_NUMBER>
+
+            ***
+
+Specify ingress class then creating ingress. You can find it by running
+
+kubectl get ingress class
+
+
+
+
+
+            ***
+
+kubectl run test-nsluckup --image=busybox:1.28 --rm -it --restart=Never -- nslookup nginx-resolver > /root/CKA/nginx.svc
+
+kubectl run test-nsluckup --image=busybox:1.28 --rm -it --restart=Never -- nslookup 172-17-1-11.default.pod > /root/CKA/nginx.pod
+
+            ***
+
+ helm get manifest <Release name>
+
+            ***
+
+            NetworkPolicy
+
+To allow traffic on port 80:
+
+      ingress:
+      - from:
+        - ports:
+          - protocol: TCP
+            port: 80
+
+
+            ***
+
+HTTPRoute to redirect traffic use weight
+
+    backendRefs:
+    - name: web-service
+      port: 80
+      weight: 80
+    - name: web-service-v2
+      port: 80
+      weight: 20
+
+        ***
+
+        Node affinity to run on a specific node :
+
+   nodeAffinity:
+     required:
+       nodeSelectorTerms:
+         - matchExpressions:
+             - key: kubernetes.io/hostname
+               operator: In
+               values:
+                 - cluster1-controlplane
+
+
+                                    *****
+Test service DNS and save output:
+
+kubectl run dns-test-svc --image=busybox:1.28 --restart=Never --rm -i \
+  -- nslookup nginx-resolver-service-cka06-svcn \
+  > /root/CKA/nginx.svc.cka06.svcn
+
+
+                                    *****
+kubectl run dns-test-pod --image=busybox:1.28 --restart=Never --rm -i \
+  -- nslookup <POD-IP> \
+  > /root/CKA/nginx.pod.cka06.svcn
+
+                                    *****
+                   TO separate different resource in the same yaml
+
+---
+
+                                    *****
+
+       To resume deployment if it's paused :
+
+kubectl rollout resume deployment <DEPLOYMENT NAME>

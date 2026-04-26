@@ -1,0 +1,62 @@
+
+🔥 1. Lookup / Complement (start here)
+(DONE) 1. Two Sum
+(DONE) 167. Two Sum II – Input Array Is Sorted
+
+👉 Goal: master HashMap lookup
+
+🔥 2. Duplicate / Uniqueness
+(Done) 217. Contains Duplicate
+(Done) 219. Contains Duplicate II
+
+👉 Goal: HashSet usage + sliding window thinking
+
+🔥 3. Frequency Counting
+(Done) 242. Valid Anagram
+(Done) 169. Majority Element
+
+👉 Goal: counting pattern
+
+🔥 4. Grouping by Key
+(DONE) 49. Group Anagrams
+
+👉 Goal: build a key → group values
+
+🔥 5. Prefix Sum ⭐ (VERY IMPORTANT)
+(DONE) 560. Subarray Sum Equals K
+(DONE) 523. Continuous Subarray Sum
+
+👉 Goal: prefix sum + hashmap (core interview pattern)
+
+🔥 6. Set-based Sequence
+(DONE) 128. Longest Consecutive Sequence
+202. Happy Number
+
+👉 Goal: set + sequence logic
+
+🔥 7. In-place Array Marking
+41. First Missing Positive
+442. Find All Duplicates in an Array
+
+👉 Goal: use array as memory (no extra space)
+
+🔥 8. Array Transformation
+283. Move Zeroes
+189. Rotate Array
+
+👉 Goal: in-place modifications
+
+🔥 9. Prefix / Suffix Computation
+238. Product of Array Except Self
+42. Trapping Rain Water (stretch, but important)
+
+👉 Goal: left + right thinking
+
+🔥 10. Intersection / Set Operations
+349. Intersection of Two Arrays
+350. Intersection of Two Arrays II
+
+👉 Goal: set vs hashmap tradeoffs
+
+
+                                        After complete the section - Master all the probmmatic ones !!!

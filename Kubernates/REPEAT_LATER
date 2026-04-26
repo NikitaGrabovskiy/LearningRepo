@@ -1,0 +1,120 @@
+
+                         Strategy
+
+🧠 Strategy (simple and effective)
+First pass (45–60 min):
+Do all easy questions
+Skip anything unclear or long
+Second pass:
+Medium difficulty (RBAC, probes, volumes)
+Last pass:
+Hard stuff (etcd, debugging, networking)
+⚠️ Key rule
+
+👉 Don’t get stuck >5 minutes on ANY question
+
+Even if you're close — skip it and return later.
+
+
+
+
+
+
+
+
+******************************************************************************
+
+
+                                Practice that might need to be repeated :
+
+
+R - repeat for sure
+N - no need to repeat for now
+
+
+
+R X 88 Validating and Mutation Admission Controllers
+R X 93 Monotoring cluster components
+X R 145 Backup and restore methods (Problematic try agan later)
+
+             N X 79 - multiple schedulers
+             N X 100 Rolling update
+             N X 113 Secrets
+             N X 120 Muliti container pods (Access logs inside pod at the end)
+             N X 203 Persistent volume claims
+             N X 208 Storage class
+
+X R THE SECURITY SECTION All labs    166 Cluster roles
+X ALL NETWORKING SECTION
+X All the helm labs - problematic next - 262
+
+
+
+All troubleshooting (IMPORTANT SKIPPPED 286 - Application failure)
+
+
+All other topics section
+All kustomize labs
+Last section Latning tab
+
+132 Install VPA
+
+Kubeadm install
+All Cluster update section, including videos
+
+******************************************************************************
+
+
+
+
+
+
+
+
+
+
+
+                                    THEORY VIDEOS
+
+                    Watch videos after practice if needed (ONLY after all the practice done once):
+
+        Review video before work:
+
+X - mean watched 1 time
+N - no need to watch again for now
+
+X 67 - resource limits
+X 74 Static pods
+X 78 - multiple schedulers
+X 84 - Admission Controllers
+X 87 - Validating and Mutating controllers
+X 92 - Monitor cluster components
+X 104 - Command and argments in Docker
+X 104 - Command and argments in Kubernates
+X 130 - In place resize of pods
+X 131 - VPA
+X 143 - Backup and restore methods
+
+X THE SECURITY SECTION Till 169 NEEDS TO BE REVIEWED AND ALL THE LABS NEEDS TO BE DONE AGAIN
+
+R X 155 TLS in kubernates
+R X 163 KubeConfig
+R X 167 Api groups
+
+
+X R 184
+R X 186 - Developing Network Policies
+X 196 - Storage in Docker
+R X 207 - Storage class
+
+NETWORK SECTION - ALL               223 Networking CNI  (Ask chat gpt)
+
+R X 220 Cluster networking
+R X 224 Pod networking
+R X 232 Service Networking
+R X 236 core DNS in Kubernates
+R X 238 Introduction to API Gateway
+
+R X ALL HELM
+
+278 Managing directories
