@@ -91,18 +91,34 @@ HTTPRoute to redirect traffic use weight
       port: 80
       weight: 20
 
-        ***
+                                                            *** to find a local path and nodeAffinity for persistentVolume do :
 
-        Node affinity to run on a specific node :
+                                                            Concepts / Storage / Volumes
 
-   nodeAffinity:
-     required:
-       nodeSelectorTerms:
-         - matchExpressions:
-             - key: kubernetes.io/hostname
-               operator: In
-               values:
-                 - cluster1-controlplane
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: example-pv
+spec:
+  capacity:
+    storage: 100Gi
+  volumeMode: Filesystem
+  accessModes:
+  - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Delete
+  storageClassName: local-storage
+  local:
+    path: /mnt/disks/ssd1
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - example-node
+
 
 
                                     *****
@@ -128,3 +144,25 @@ kubectl run dns-test-pod --image=busybox:1.28 --restart=Never --rm -i \
        To resume deployment if it's paused :
 
 kubectl rollout resume deployment <DEPLOYMENT NAME>
+
+                                    ****
+
+There is not example in the documentation. I had to remember !!!
+
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: web-route
+spec:
+  parentRefs:
+    - name: web-gateway
+  rules:
+    - backendRefs:
+        - name: web-service
+          port: 80
+          weight: 80
+        - name: web-service-v2
+          port: 80
+          weight: 20
+
+                                    ****

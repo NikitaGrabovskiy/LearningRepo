@@ -1,55 +1,25 @@
 
-1) Faang.me - first thing! Do it - focus on finding a new job FOR SURE ! MOST IMPORTANT !
 
 
-                        Finalize everything - before going
-
-                        Make list of things !!!!!!!
-
-                        Focus on styding one topic at a time
-First 4 month - 2 hours a day AI certification:
-1) Java certification - 4 weeks
-2) Spring boot certification - 2 weeks
-3) Practice algorithms:
-    Make list from easiest to hardest and practice one by one till perfect
-
-After that : Faang.me course
-
-After 2 hours a week repeat and the rest certification
+                                                Faang.me
 
 
+После того как получу Кубернет сертификацию
 
 
-                What to stydy on ai ?
+                                    Работающий, супер простой план обучения
 
-1) DeepLearning.AI LLM course
-2) AWS Generative AI Specialty
-3) Databricks Generative AI Engineer Associate
+1) Каждый день решать 1 алгоритм
+2) Одну неделю изучаю AI, вторую - System design
+3) 1 час в неделю готовлюсь к интервью
+
+
+                Писать по 30 минут в день
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-30 минут в день писать или рабоать над романами
-
-                Когда найду работу на 170-200
-1) Упор бизнес
-2) Изучение AI
 
 
 
@@ -63,12 +33,13 @@ After 2 hours a week repeat and the rest certification
 
                                 Цель на год
 
-1) Найти работу на 170 - 200 тысяч
+1) Найти работу на 170 - 200 тысяч !
 2) Опубликовать 3 книги самому:
 
         Мерцающие огни
-        Профессии будущего (3 истории на Английском писать)
         Сироты
+        Профессии будущего (3 истории на Английском писать)
+
 
    3 книги опубликовать на русском и английском
 
@@ -84,6 +55,8 @@ After 2 hours a week repeat and the rest certification
 
                             AFTER Phoenix Важно
 
+            While mom here - study every Sunday and go out every Suturday
+
 
             When return home:
 
@@ -93,13 +66,8 @@ After 2 hours a week repeat and the rest certification
             даже если несколько дней. На это упор, всегда держать в голове. Никогда не расалабляться.
             Просто молчать 2 часа если что, потом 2X
 
-
-            2) Упор на каммуникацию и лидерство на новой работе.
-            Самое главное! Сделать отдельный пункт! Начать сразу!
-
-            3) Рисовать диаграмму проекта на бумаге. Понимать архитектуру.
-
+            2) На проекте - полностью владеть проектом. Постоянно себя презентировать и изучать приложение
 
             Also:
-            * Копить деньги что бы была подушка в случае чего
+            * Копить деньги должно быть 50000
             * Отдать Ксюшу в садик

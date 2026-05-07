@@ -3,7 +3,8 @@
 
 int digit = Character.getNumericValue(ch);
 
-                                    *** Convert Integer to
+
+                                    *** Convert Integer to ***
 
 public List<Integer> getDigits(int n) {
     List<Integer> list = new ArrayList<>();
@@ -17,3 +18,33 @@ public List<Integer> getDigits(int n) {
 
     return list;
 }
+
+                                     ***  Absolute value (Without minus) ***
+
+Math.abs(int number)
+
+                                     *** Convert List<Integer> to int [] ***
+
+
+    result.stream().mapToInt(Integer::intValue).toArray();
+
+
+                                     *** NOTE ***
+
+Put <> for each collection
+
+Set<Integer> set = new HashSet<>();
+
+                                     *** MAX ***
+
+
+maxSum=Math.max(maxSum,sum);
+
+                                     *** Convert to double ***
+
+(double)5 / 2 = 2.5
+
+without it just 2
+
+
+

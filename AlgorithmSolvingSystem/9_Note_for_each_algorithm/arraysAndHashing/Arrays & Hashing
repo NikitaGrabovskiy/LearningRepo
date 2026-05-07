@@ -30,33 +30,32 @@
 
 🔥 6. Set-based Sequence
 (DONE) 128. Longest Consecutive Sequence
-202. Happy Number
+(DONE) 202. Happy Number
 
 👉 Goal: set + sequence logic
 
 🔥 7. In-place Array Marking
-41. First Missing Positive
-442. Find All Duplicates in an Array
+(DONE) 41. First Missing Positive
+(DONE) 442. Find All Duplicates in an Array
 
 👉 Goal: use array as memory (no extra space)
 
 🔥 8. Array Transformation
-283. Move Zeroes
-189. Rotate Array
+(DONE) 283. Move Zeroes
+(DONE) 189. Rotate Array
 
 👉 Goal: in-place modifications
 
 🔥 9. Prefix / Suffix Computation
-238. Product of Array Except Self
-42. Trapping Rain Water (stretch, but important)
+(DONE) 238. Product of Array Except Self
+(DONE) 42. Trapping Rain Water
 
 👉 Goal: left + right thinking
 
 🔥 10. Intersection / Set Operations
-349. Intersection of Two Arrays
-350. Intersection of Two Arrays II
+(DONE) 349. Intersection of Two Arrays
+(DONE) 350. Intersection of Two Arrays II
 
 👉 Goal: set vs hashmap tradeoffs
 
 
-                                        After complete the section - Master all the probmmatic ones !!!
