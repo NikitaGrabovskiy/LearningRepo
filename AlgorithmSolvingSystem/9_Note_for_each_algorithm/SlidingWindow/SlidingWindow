@@ -2,19 +2,19 @@
 
             1. Fixed window
 
-643. Maximum Average Subarray I
-438. Find All Anagrams in a String
+(DONE) 643. Maximum Average Subarray I
+(DONE) 438. Find All Anagrams in a String
 
         2. Variable window ⭐ MOST IMPORTANT
 
-3. Longest Substring Without Repeating Characters
-424. Longest Repeating Character Replacement
-209. Minimum Size Subarray Sum
-76. Minimum Window Substring
+(DONE) 3. Longest Substring Without Repeating Characters
+(DONE) 424. Longest Repeating Character Replacement
+(DONE) 209. Minimum Size Subarray Sum
+(DONE) 76. Minimum Window Substring
 
         3. Window + frequency map
 
-567. Permutation in String
+(DONE) 567. Permutation in String
 904. Fruit Into Baskets
 
         4. Count subarrays

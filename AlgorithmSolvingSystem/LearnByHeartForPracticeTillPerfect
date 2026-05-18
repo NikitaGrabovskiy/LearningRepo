@@ -47,4 +47,42 @@ maxSum=Math.max(maxSum,sum);
 without it just 2
 
 
+                                    *** The whole character counting ***
 
+438. Find All Anagrams in a String
+
+class Solution {
+    public List<Integer> findAnagrams(String s, String p) {
+        List<Integer> result = new ArrayList<>();
+
+        if (p.length() > s.length()) return result;
+
+        int[] pCount = new int[26];
+        int[] windowCount = new int[26];
+
+        for (char c : p.toCharArray()) {
+            pCount[c - 'a']++;
+        }
+
+        for (int i = 0; i < s.length(); i++) {
+            windowCount[s.charAt(i) - 'a']++;
+
+            if (i >= p.length()) {
+                windowCount[s.charAt(i - p.length()) - 'a']--;
+            }
+
+            if (Arrays.equals(pCount, windowCount)) {
+                result.add(i - p.length() + 1);
+            }
+        }
+
+        return result;
+    }
+}
+
+                                        *** Arrays.equals(array1,array2) ***
+
+
+                                       *** s.charAt(i); ***
+
+                                       *** int minLen = Integer.MAX_VALUE; ***

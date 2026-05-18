@@ -1,22 +1,64 @@
 
                             LEARN BY HEART
 
-
                             COMMANDS :
+
+* Can I
+* nsLookup for service / pod
+* How to get affirnity ?
+* Check config
+* Update repo with latest version
+* Resume deployment
+* Kubectl commands - status, start, logs, files locations
+* get manifest
+* Call service from different space
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             ***
 
+alias k=kubectl
+
+
+            ***
+
+
+            The command can be found in the example : Manage TLS Certificates in a Cluster
+
+            $(cat server.csr | base64 | tr -d '\n')
+
+
 cat /root/CKA/john.csr  | base64 | tr -d '\n'
+
 
             ***
 
 kubectl certificate approve <CERTIFICATE SIGNING REQUEST NAME>
 
-            ***
+            !***
 
 kubectl auth can-i create pods --as=<USER_NAME> -n=<NAMES_SPACE_NAME>
 
-            ***
+            !***
 
         To check if kubeconfig working:
 
@@ -39,7 +81,7 @@ curl http://my-service.backend.svc.cluster.local:<port>
 
 
 
-            *** Update repos to the latest versions
+            !*** Update repos to the latest versions
 
 1 get image name from existing release from "helm list"
 2 find actual name <CHART_NAME>/<IMAGE> using "helm search repo"
@@ -53,20 +95,17 @@ Specify ingress class then creating ingress. You can find it by running
 kubectl get ingress class
 
 
-
-
-
-            ***
+            !***
 
 kubectl run test-nsluckup --image=busybox:1.28 --rm -it --restart=Never -- nslookup nginx-resolver > /root/CKA/nginx.svc
 
 kubectl run test-nsluckup --image=busybox:1.28 --rm -it --restart=Never -- nslookup 172-17-1-11.default.pod > /root/CKA/nginx.pod
 
-            ***
+            !***
 
  helm get manifest <Release name>
 
-            ***
+            !***
 
             NetworkPolicy
 
@@ -122,24 +161,11 @@ spec:
 
 
                                     *****
-Test service DNS and save output:
-
-kubectl run dns-test-svc --image=busybox:1.28 --restart=Never --rm -i \
-  -- nslookup nginx-resolver-service-cka06-svcn \
-  > /root/CKA/nginx.svc.cka06.svcn
-
-
-                                    *****
-kubectl run dns-test-pod --image=busybox:1.28 --restart=Never --rm -i \
-  -- nslookup <POD-IP> \
-  > /root/CKA/nginx.pod.cka06.svcn
-
-                                    *****
                    TO separate different resource in the same yaml
 
 ---
 
-                                    *****
+                                    !*****
 
        To resume deployment if it's paused :
 
@@ -147,22 +173,19 @@ kubectl rollout resume deployment <DEPLOYMENT NAME>
 
                                     ****
 
-There is not example in the documentation. I had to remember !!!
+          service kubelet status
 
-apiVersion: gateway.networking.k8s.io/v1
-kind: HTTPRoute
-metadata:
-  name: web-route
-spec:
-  parentRefs:
-    - name: web-gateway
-  rules:
-    - backendRefs:
-        - name: web-service
-          port: 80
-          weight: 80
-        - name: web-service-v2
-          port: 80
-          weight: 20
+          service kubelet start
 
-                                    ****
+          journalctl -u kubelet
+
+Kubelet file located under:
+
+          /etc/kubernetes/kubelet.config
+
+    Another file :
+
+    /var/lib/kubelet/config.yaml
+
+
+                                    !**** difference between port and target port in service ****
