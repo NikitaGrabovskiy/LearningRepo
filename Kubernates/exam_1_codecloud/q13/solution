@@ -1,0 +1,27 @@
+student-node ~ ➜ kubectl config use-context cluster1
+Switched to context "cluster1".
+
+student-node ~ ➜  cat << EOF | kubectl apply -f -
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ckad17-qos-aecs-3
+  namespace: ckad17-nqoss-aecs
+spec:
+  containers:
+  - name: ckad17-qos-ctr-3-aecs
+    image: nginx
+    resources:
+      limits:
+        memory: "200Mi"
+      requests:
+        memory: "100Mi"
+EOF
+
+pod/ckad17-qos-aecs-3 created
+
+student-node ~ ➜  kubectl --namespace=ckad17-nqoss-aecs get pod --output=custom-columns="NAME:.metadata.name,QOS:.status.qosClass"
+NAME                QOS
+ckad17-qos-aecs-1   BestEffort
+ckad17-qos-aecs-2   Guaranteed
+ckad17-qos-aecs-3   Burstable

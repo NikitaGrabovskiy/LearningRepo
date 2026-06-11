@@ -86,3 +86,28 @@ class Solution {
                                        *** s.charAt(i); ***
 
                                        *** int minLen = Integer.MAX_VALUE; ***
+
+                                       *** Convert List of integers into sum ***
+
+List<Integer> numbers = List.of(10, 20, 30, 40);
+
+int sum = numbers.stream()
+                 .mapToInt(Integer::intValue)
+                 .sum();
+
+******************************************************************************************************************
+
+        Deque<Integer> deque = new ArrayDeque<>();
+
+                these are the most important methods to memorize:
+
+offerFirst(x)	Add to front
+offerLast(x)	Add to back
+pollFirst()	Remove and return front
+pollLast()	Remove and return back
+peekFirst()	View front without removing
+peekLast()	View back without removing
+isEmpty()	Check if deque is empty
+size()	Number of elements
+
+******************************************************************************************************************

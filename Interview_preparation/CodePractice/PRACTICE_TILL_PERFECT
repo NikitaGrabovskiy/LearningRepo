@@ -1,0 +1,28 @@
+
+1) Build Spring boot application (Most important one), make backend for angular app:
+
+            * Crud rest controller
+            * Apis protected by auth tokens
+            * Write spring tests for everything
+
+2) Write 9 design patterns
+3) Practice stream api from the list:
+
+
+                Create a test class - and file implementation instructions so I can do all the examples:
+
+                filter
+                map
+                mapToInt
+                sum
+                count
+                collect
+                groupingBy
+                toMap
+                sorted
+                distinct
+                findFirst
+                anyMatch
+
+4) Build an angular notes app from scratch (Use backend for angular app)
+5) Practice concurrency (Create a list )

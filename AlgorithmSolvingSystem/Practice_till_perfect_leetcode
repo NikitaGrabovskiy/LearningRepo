@@ -9,7 +9,12 @@
 349. Intersection of Two Arrays
 350. Intersection of Two Arrays II
 
+
+
+
                         Harder
+
+                        ********** Arrays and Hashing *************
 
 167. Two Sum II - Input Array Is Sorted
 219. Contains Duplicate II
@@ -35,4 +40,8 @@
 (DO AGAIN) 209. Minimum Size Subarray Sum
 (DO AGAIN) 76. Minimum Window Substring
 567. Permutation in String
-
+(DO AGAIN) 904. Fruit Into Baskets
+713. Subarray Product Less Than K
+(DO AGAIN)930. Binary Subarrays With Sum
+1248. Count Number of Nice Subarrays
+239. Sliding Window Maximum
