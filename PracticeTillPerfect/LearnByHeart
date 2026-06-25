@@ -1,0 +1,36 @@
+
+************************************************************   Spring Boot App   **********************************************************************
+
+
+                              * Entity : *
+
+
+            @Table(name = "employees")
+
+            @Id
+            @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+
+
+                            * Repository - interface *
+
+            @Repository
+            public interface StudentRepository extends JpaRepository<Student,Long> {}
+
+
+                            * Controller *
+
+@RestController
+@RequestMapping("/api/persons")
+public class PersonController {
+
+    @GetMapping
+    public String getAllPersons() {
+        return "All persons";
+    }
+
+    @GetMapping("/{id}")
+    public String getPersonById(@PathVariable Long id) {
+        return "Person ID: " + id;
+    }
+}

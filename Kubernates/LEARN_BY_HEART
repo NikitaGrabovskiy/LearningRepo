@@ -1,43 +1,20 @@
 
 
-* How to create a service to point to external endpoints
-* Quality of Service how to display only certain elements in get pods
-* CRD - customResourceDefinition
-
-                            ***** EndpointSlice *****
-
-An EndpointSlice in Kubernetes is a resource that stores the network endpoints (Pod IPs and ports) behind a Service.
-
-Think of it like this:
-
-Service
-   |
-   v
-EndpointSlices
-   |
-   +--> Pod 10.0.1.5:8080
-   +--> Pod 10.0.1.6:8080
-   +--> Pod 10.0.1.7:8080
-
-
-************************************************************************************************************************
-
-
                                     Learn by heart
 
 
 --dry-run=client -o yaml > pod.yaml
 
 
+************************************************************************************************************************
+
                         To start release :
 
                   Helm install NAME
 
-
 ************************************************************************************************************************
 
                                     How to save only required columns
-
 
 
 

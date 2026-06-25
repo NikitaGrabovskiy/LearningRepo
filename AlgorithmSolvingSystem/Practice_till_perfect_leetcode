@@ -3,18 +3,36 @@
 
                                              * mean practiced
 
-                            ********* Arrays & Hashing *********
 
-                        Easy
+
+
+
+
+
+
+
+
+
+
+
+                                          Easy
 349. Intersection of Two Arrays
 350. Intersection of Two Arrays II
+344. Reverse String
+125. Valid Palindrome
+
+                                        Medium but know how to do
+
+
+
+167. Two Sum II - Input Array Is Sorted
 
 
 
 
-                        Harder
 
-                        ********** Arrays and Hashing *************
+                                         Harder
+
 
 167. Two Sum II - Input Array Is Sorted
 219. Contains Duplicate II
@@ -30,9 +48,6 @@
 189. Rotate Array
 * (DO NOT UNDERSTAND) 238. Product of Array Except Self
 * (DO NOT UNDERSTAND) 42. Trapping Rain Water
-
-                            ********* Sliding window *********
-
 (Do again) 643. Maximum Average Subarray I
 (DO AGAIN - PRACTICE CHAR COUNTING) 438. Find All Anagrams in a String
 (DO AGAIN - use Map) 3. Longest Substring Without Repeating Characters
@@ -42,6 +57,7 @@
 567. Permutation in String
 (DO AGAIN) 904. Fruit Into Baskets
 713. Subarray Product Less Than K
-(DO AGAIN)930. Binary Subarrays With Sum
+(DO AGAIN) 930. Binary Subarrays With Sum
 1248. Count Number of Nice Subarrays
 239. Sliding Window Maximum
+11. Container With Most Water

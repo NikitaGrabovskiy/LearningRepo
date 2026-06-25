@@ -4,7 +4,15 @@
 1) Build Spring boot app:
             * Rest API 
             * Spring Data JPA 
+            * Auth, tokens
             * 3 Tests - @SpringBootTest, @DataJpaTest, @WebMvcTest
+            * Composite key
+            * Use constructor autowiring instead of filed
+            * Make postman calls from scratch
+
+
+   (See practice repo)
+
 
 2) Practice streams:
 
@@ -27,6 +35,4 @@
 
 4) Create Comparator and Comparable and practice sorting list in a collection
 
-5) Create a SpringBoot application and secure endpoints with tokens and spring security
-
-6) Practice SQL queries on website : https://sqlzoo.net/wiki/SQL_Tutorial (Starting from 4 SELECT within SELECT)
+5) Practice SQL queries on website : https://sqlzoo.net/wiki/SQL_Tutorial (Starting from 4 SELECT within SELECT)

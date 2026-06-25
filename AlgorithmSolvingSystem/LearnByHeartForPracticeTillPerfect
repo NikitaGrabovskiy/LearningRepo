@@ -111,3 +111,14 @@ isEmpty()	Check if deque is empty
 size()	Number of elements
 
 ******************************************************************************************************************
+
+                                            Check if char is letter
+
+                Character.isLetter(c)
+
+                                            Check if it letter or digit
+
+                Character.isLetterOrDigit(rightChar)
+
+
+******************************************************************************************************************
